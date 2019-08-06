@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="XYCalendarCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="68" height="69"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="68" height="69"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1t-Up-TWi">
+                        <rect key="frame" x="0.0" y="0.0" width="68" height="69"/>
+                        <state key="normal" title="1">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <connections>
+                            <action selector="contentBtnClick:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Oh4-Gw-Srn"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="c1t-Up-TWi" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="9Yt-Dd-PN3"/>
+                <constraint firstItem="c1t-Up-TWi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="kTg-Zx-FX4"/>
+                <constraint firstAttribute="trailing" secondItem="c1t-Up-TWi" secondAttribute="trailing" id="qq4-ji-jCd"/>
+                <constraint firstAttribute="bottom" secondItem="c1t-Up-TWi" secondAttribute="bottom" id="we7-tC-ctP"/>
+            </constraints>
+            <size key="customSize" width="68" height="69"/>
+            <connections>
+                <outlet property="contentBtn" destination="c1t-Up-TWi" id="SLQ-Ix-GjW"/>
+            </connections>
+            <point key="canvasLocation" x="47" y="107.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

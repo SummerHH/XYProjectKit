@@ -1,0 +1,44 @@
+
+inhibit_all_warnings!
+# Uncomment the next line to define a global platform for your project
+ platform :ios, '9.0'
+
+target 'XYProjectKit' do
+
+pod 'AFNetworking'
+pod 'Masonry'
+pod 'SDWebImage'
+pod 'MJRefresh'
+pod 'MJExtension'
+pod 'NullSafe'
+pod 'XHLaunchAd'
+pod 'LYEmptyView'
+pod 'IQKeyboardManager'
+pod 'FMDB'
+pod 'MBProgressHUD'
+pod 'SVProgressHUD'
+pod 'JXCategoryView'
+pod 'SDCycleScrollView'
+pod 'TZImagePickerController'
+pod 'YYCache'
+pod 'RTRootNavigationController'
+
+#bugly
+pod 'Bugly'
+pod 'AvoidCrash'
+#Umeng
+pod 'UMCCommon'
+pod 'UMCAnalytics'
+pod 'UMCShare/UI'
+pod 'UMCShare/Social/ReducedWeChat'
+pod 'UMCShare/Social/ReducedQQ'
+# 集成新浪微博(精简版1M)
+pod 'UMCShare/Social/ReducedSina'
+
+#aliyun
+pod 'AliyunPlayer_iOS/AliyunPlayerSDK'
+pod 'Reachability', '~> 3.2'
+
+#调试黑魔法
+pod 'FLEX', '~> 2.4.0'
+end
