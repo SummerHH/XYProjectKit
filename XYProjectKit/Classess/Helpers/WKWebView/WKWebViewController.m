@@ -13,8 +13,6 @@
 
 #import "WebChatPayH5VIew.h"
 
-
-
 typedef enum{
     loadWebURLString = 0,
     loadWebHTMLString,

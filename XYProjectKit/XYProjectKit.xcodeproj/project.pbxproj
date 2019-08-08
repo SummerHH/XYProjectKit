@@ -134,6 +134,8 @@
 		677FF71822801BB900EEA474 /* motion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 677FF71722801BB900EEA474 /* motion.mp3 */; };
 		677FF71C22801E8000EEA474 /* XYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 677FF71B22801E8000EEA474 /* XYHomeViewController.m */; };
 		677FF75C228035AE00EEA474 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 677FF75B228035AE00EEA474 /* LaunchScreen.storyboard */; };
+		67907B5122FA8213005051E0 /* XYBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67907B5022FA8213005051E0 /* XYBaseWebViewController.m */; };
+		67907B5422FA83C4005051E0 /* XYWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67907B5322FA83C4005051E0 /* XYWebViewController.m */; };
 		67AC849A22F2C9CA00FAB071 /* XYPresentedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AC849222F2C9CA00FAB071 /* XYPresentedController.m */; };
 		67AC849B22F2C9CA00FAB071 /* XYPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AC849522F2C9CA00FAB071 /* XYPresentationController.m */; };
 		67AC849C22F2C9CA00FAB071 /* XYPresentAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AC849622F2C9CA00FAB071 /* XYPresentAnimationManager.m */; };
@@ -421,6 +423,10 @@
 		677FF71A22801E8000EEA474 /* XYHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYHomeViewController.h; sourceTree = "<group>"; };
 		677FF71B22801E8000EEA474 /* XYHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYHomeViewController.m; sourceTree = "<group>"; };
 		677FF75B228035AE00EEA474 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		67907B4F22FA8212005051E0 /* XYBaseWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYBaseWebViewController.h; sourceTree = "<group>"; };
+		67907B5022FA8213005051E0 /* XYBaseWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYBaseWebViewController.m; sourceTree = "<group>"; };
+		67907B5222FA83C4005051E0 /* XYWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYWebViewController.h; sourceTree = "<group>"; };
+		67907B5322FA83C4005051E0 /* XYWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYWebViewController.m; sourceTree = "<group>"; };
 		67AC849222F2C9CA00FAB071 /* XYPresentedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYPresentedController.m; sourceTree = "<group>"; };
 		67AC849322F2C9CA00FAB071 /* XYPresentAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYPresentAnimationManager.h; sourceTree = "<group>"; };
 		67AC849422F2C9CA00FAB071 /* XYColorBackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYColorBackView.h; sourceTree = "<group>"; };
@@ -632,6 +638,8 @@
 				677FF311227FFA4B00EEA474 /* XYDebugTableViewController.m */,
 				677FF312227FFA4B00EEA474 /* XYNetworkingViewController.h */,
 				677FF30F227FFA4B00EEA474 /* XYNetworkingViewController.m */,
+				67907B5222FA83C4005051E0 /* XYWebViewController.h */,
+				67907B5322FA83C4005051E0 /* XYWebViewController.m */,
 			);
 			path = Debug;
 			sourceTree = "<group>";
@@ -994,6 +1002,8 @@
 				675AD9FA22D494C100E20983 /* XYBaseViewController.m */,
 				67AC84A822F5D2D900FAB071 /* XYBaseNavigationViewController.h */,
 				67AC84A922F5D2D900FAB071 /* XYBaseNavigationViewController.m */,
+				67907B4F22FA8212005051E0 /* XYBaseWebViewController.h */,
+				67907B5022FA8213005051E0 /* XYBaseWebViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1639,6 +1649,7 @@
 				677FF70D227FFA4D00EEA474 /* UIImage+TYSnapshot.m in Sources */,
 				677FF6FE227FFA4D00EEA474 /* KeychainHelper.m in Sources */,
 				677FF65A227FFA4D00EEA474 /* XYPrivacyManager.m in Sources */,
+				67907B5122FA8213005051E0 /* XYBaseWebViewController.m in Sources */,
 				677FF629227FFA4D00EEA474 /* UIImage+AlivcHelper.m in Sources */,
 				677FF63C227FFA4D00EEA474 /* UIView+RoundedCorner.m in Sources */,
 				677FF64E227FFA4D00EEA474 /* NSString+Size.m in Sources */,
@@ -1685,6 +1696,7 @@
 				677FF633227FFA4D00EEA474 /* UIColor+Gradient.m in Sources */,
 				675ADA2A22D5DC9D00E20983 /* XYUMAnalyticsManager.m in Sources */,
 				677FF0A3227FE71300EEA474 /* AppDelegate.m in Sources */,
+				67907B5422FA83C4005051E0 /* XYWebViewController.m in Sources */,
 				675ADA0A22D5903D00E20983 /* XYNewFeatureViewController.m in Sources */,
 				677FF625227FFA4D00EEA474 /* UIImage+XYExt.m in Sources */,
 				675AD9F822D4941400E20983 /* XYFullScreenViewController.m in Sources */,

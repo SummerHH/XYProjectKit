@@ -8,7 +8,7 @@
 
 #import "XYHomeViewController.h"
 #import "XYDebugTableViewController.h"
-#import "WKWebViewController.h"
+#import "XYBaseWebViewController.h"
 
 static NSString *const XYHomeTableCellIdentifier = @"XYHomeTableCellIdentifier";
 
@@ -58,7 +58,7 @@ static NSString *const XYHomeTableCellIdentifier = @"XYHomeTableCellIdentifier";
 
 - (void)nextStepClick:(UIButton *)sender {
     
-    WKWebViewController *webVc = [[WKWebViewController alloc] init];
+    XYBaseWebViewController *webVc = [[XYBaseWebViewController alloc] init];
     [webVc loadWebURLSring:@"https://www.baidu.com"];
     [self.rt_navigationController pushViewController:webVc animated:YES complete:nil];
     
