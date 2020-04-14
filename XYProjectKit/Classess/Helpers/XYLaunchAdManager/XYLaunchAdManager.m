@@ -80,11 +80,11 @@
     NSLog(@"广告点击的回调");
     WKWebViewController *webView = [[WKWebViewController alloc] init];
     [webView loadWebURLSring:(NSString *)openModel];
-    NSLog(@"广告点击的回调点击 %@ ",NSStringFromClass([[[AppDelegate shareAppDelegate] getCurrentUIVC] class]));
+    NSLog(@"广告点击的回调点击 %@ ",NSStringFromClass([[[AppDelegate shareAppDelegate] getCurrentViewController] class]));
     
     XYHomeViewController *homeVC = [[XYHomeViewController alloc] init];
     
-    UIViewController *rootVC = [[AppDelegate shareAppDelegate] getCurrentVC];
+    UIViewController *rootVC = [[AppDelegate shareAppDelegate] getCurrentViewController];
     if ([rootVC isKindOfClass:[RTRootNavigationController class]]) {
         RTRootNavigationController *vc = (RTRootNavigationController *)rootVC;
         [vc.rt_topViewController.rt_navigationController pushViewController:homeVC animated:YES complete:nil];

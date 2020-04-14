@@ -9,18 +9,27 @@
 #import "XYHomeViewController.h"
 #import "XYDebugTableViewController.h"
 #import "XYBaseWebViewController.h"
+#import "XYBaseNavigationViewController.h"
+#import "XYLoginViewController.h"
+#import "XYNavigationViewController.h"
+#import "RTMPLiveViewController.h"
 
 static NSString *const XYHomeTableCellIdentifier = @"XYHomeTableCellIdentifier";
 
 @interface XYHomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSArray *titlesArr;
-@property (nonatomic, strong) NSArray *viewControllersArr;
+@property (nonatomic, strong) NSArray *dataArr;
+
 
 @end
 
 @implementation XYHomeViewController
+
+- (void)dealloc {
+
+    NSLog(@" %@ : 销毁了", NSStringFromClass([self class]));
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,31 +37,27 @@ static NSString *const XYHomeTableCellIdentifier = @"XYHomeTableCellIdentifier";
     
     [self initialization];
     
-    self.titlesArr = @[@"普通样式",
-                       @"横屏播放",
-                       @"列表点击播放"];
+    XYWordArrowItem *item0 = [XYWordArrowItem itemWithTitle:@"导航栏" subTitle:@""];
+    item0.itemClass = [XYNavigationViewController class];
     
-    self.viewControllersArr = @[@"XYNormalViewController",
-                                @"XYNotAutoPlayViewController",
-                                @"XYFullScreenViewController"];
+    XYWordArrowItem *item1 = [XYWordArrowItem itemWithTitle:@"Live(直播)" subTitle:@""];
+    item1.itemClass = [RTMPLiveViewController class];
     
+    self.dataArr = @[item0,item1];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
     
-    self.navigationItem.title = @"哈哈哈";
-    /*
-    [self xy_setNavBarBarTintColor:[UIColor redColor]];
-    [self xy_setNavBarBackgroundAlpha:1.0f];
-    [self xy_setNavBarTitleColor:[UIColor blueColor]];
-    */
-    [self xy_setNavBarShadowImageHidden:YES];
+    self.navigationItem.title = @"PROJECT";
 
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"nextStep" style:UIBarButtonItemStylePlain target:self action:@selector(nextStepClick:)];
     self.navigationItem.rightBarButtonItem = rightItem;
     [self xy_setNavBarTintColor:[UIColor orangeColor]];
+    
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:@"模态" style:UIBarButtonItemStylePlain target:self action:@selector(leftBtnClick:)];
+    self.navigationItem.leftBarButtonItem = leftItem;
     
 }
 
@@ -64,13 +69,23 @@ static NSString *const XYHomeTableCellIdentifier = @"XYHomeTableCellIdentifier";
     
 }
 
+- (void)leftBtnClick:(UIButton *)sender {
+    
+    XYLoginViewController *loginVC = [[XYLoginViewController alloc] init];
+    
+    XYBaseNavigationViewController *navi = [[XYBaseNavigationViewController alloc] initWithRootViewController:loginVC];
+       navi.modalPresentationStyle = UIModalPresentationFullScreen;
+    [[[AppDelegate shareAppDelegate] getCurrentViewController] presentViewController:navi animated:YES completion:nil];
+}
+
+
 - (void)initialization {
 
     [self.view addSubview:self.tableView];
 }
 
-- (void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
     
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
@@ -80,21 +95,17 @@ static NSString *const XYHomeTableCellIdentifier = @"XYHomeTableCellIdentifier";
 #pragma mark ******  UITableViewDataSource  *******
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.titlesArr.count;
+    return self.dataArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:XYHomeTableCellIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = self.titlesArr[indexPath.row];
-    if (indexPath.row == 1) {
-        UITextField *textField = [[UITextField alloc] init];
-        textField.frame = CGRectMake(130, 0, 200, 40);
-        textField.backgroundColor = [UIColor purpleColor];
-        textField.borderStyle = UITextBorderStyleLine;
-        [cell.contentView addSubview:textField];
-    }
+    XYWordArrowItem *item = self.dataArr[indexPath.row];
+    
+    cell.textLabel.text = item.title;
+   
     return cell;
 }
 
@@ -102,12 +113,13 @@ static NSString *const XYHomeTableCellIdentifier = @"XYHomeTableCellIdentifier";
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    NSString *vcString = self.viewControllersArr[indexPath.row];
-    UIViewController *viewController = [[NSClassFromString(vcString) alloc] init];
-
-    viewController.navigationItem.title = self.titlesArr[indexPath.row];
-    [self.rt_navigationController pushViewController:viewController animated:YES];
-    
+    XYWordArrowItem *item = self.dataArr[indexPath.row];
+    if (item.itemClass) {
+        UIViewController *vc = [[item.itemClass alloc] init];
+        if ([vc isKindOfClass:[UIViewController class]]) {
+            [self.rt_navigationController pushViewController:vc animated:YES];
+        }
+    }
 }
 
 #pragma mark ******  UItableView  *******
@@ -120,5 +132,6 @@ static NSString *const XYHomeTableCellIdentifier = @"XYHomeTableCellIdentifier";
     }
     return _tableView;
 }
+
 
 @end

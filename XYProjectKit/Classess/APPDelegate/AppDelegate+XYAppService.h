@@ -29,10 +29,10 @@
 - (void)initBugly;
 
 /// 当前顶层控制器
-- (UIViewController*)getCurrentVC;
+- (UIViewController*)getCurrentViewController;
 
 /// 当前的根控制器
-- (UIViewController*)getCurrentUIVC;
+- (UIViewController*)getCurrentRootViewController;
 
 /// 单例
 + (AppDelegate *)shareAppDelegate;

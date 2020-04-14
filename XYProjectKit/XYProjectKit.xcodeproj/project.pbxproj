@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -134,18 +134,34 @@
 		677FF71822801BB900EEA474 /* motion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 677FF71722801BB900EEA474 /* motion.mp3 */; };
 		677FF71C22801E8000EEA474 /* XYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 677FF71B22801E8000EEA474 /* XYHomeViewController.m */; };
 		677FF75C228035AE00EEA474 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 677FF75B228035AE00EEA474 /* LaunchScreen.storyboard */; };
+		678E0BD02439858900D5263C /* XYNavigationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 678E0BCF2439858900D5263C /* XYNavigationBarView.m */; };
+		678E0BD32439B9DC00D5263C /* XYIQKeyboardTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 678E0BD22439B9DC00D5263C /* XYIQKeyboardTestViewController.m */; };
+		678E0BD62439BB5F00D5263C /* XYIQKeyboardyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 678E0BD52439BB5F00D5263C /* XYIQKeyboardyTableViewController.m */; };
+		678E0BD92439BE6300D5263C /* XYMoveNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 678E0BD82439BE6300D5263C /* XYMoveNavigationViewController.m */; };
 		67907B5122FA8213005051E0 /* XYBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67907B5022FA8213005051E0 /* XYBaseWebViewController.m */; };
 		67907B5422FA83C4005051E0 /* XYWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67907B5322FA83C4005051E0 /* XYWebViewController.m */; };
 		67AC849A22F2C9CA00FAB071 /* XYPresentedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AC849222F2C9CA00FAB071 /* XYPresentedController.m */; };
 		67AC849B22F2C9CA00FAB071 /* XYPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AC849522F2C9CA00FAB071 /* XYPresentationController.m */; };
 		67AC849C22F2C9CA00FAB071 /* XYPresentAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AC849622F2C9CA00FAB071 /* XYPresentAnimationManager.m */; };
 		67AC849D22F2C9CA00FAB071 /* XYColorBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AC849822F2C9CA00FAB071 /* XYColorBackView.m */; };
-		67AC84A422F2D2F000FAB071 /* XYNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AC84A322F2D2F000FAB071 /* XYNavigationBar.m */; };
 		67AC84AA22F5D2D900FAB071 /* XYBaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AC84A922F5D2D900FAB071 /* XYBaseNavigationViewController.m */; };
 		67B32DE322B33A5C007FDB41 /* XYShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B32DE222B33A5C007FDB41 /* XYShopViewController.m */; };
-		67B32DEC22B349A0007FDB41 /* XYNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B32DEB22B349A0007FDB41 /* XYNormalViewController.m */; };
 		67B32DF322B34A43007FDB41 /* XYNotAutoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B32DF222B34A43007FDB41 /* XYNotAutoPlayViewController.m */; };
 		67B32DFB22B3778B007FDB41 /* XYPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B32DFA22B3778B007FDB41 /* XYPlayerController.m */; };
+		67BB983924386C9C00058B7C /* XYNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BB983824386C9C00058B7C /* XYNavigationViewController.m */; };
+		67BB984624386E6B00058B7C /* XYWordItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BB984524386E6B00058B7C /* XYWordItem.m */; };
+		67BB984924386E8500058B7C /* XYWordArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BB984824386E8500058B7C /* XYWordArrowItem.m */; };
+		67BB984F2438757E00058B7C /* XYNavigationBarHiddenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BB984E2438757E00058B7C /* XYNavigationBarHiddenViewController.m */; };
+		67BB98512438795300058B7C /* NavigationBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67BB98502438795300058B7C /* NavigationBar.storyboard */; };
+		67BB985424387AB300058B7C /* XYNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BB985324387AB300058B7C /* XYNormalViewController.m */; };
+		67BB985724387BA500058B7C /* XYNoSideslipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BB985624387BA500058B7C /* XYNoSideslipViewController.m */; };
+		67BB985A2438891D00058B7C /* XYPushRemoveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BB98592438891D00058B7C /* XYPushRemoveViewController.m */; };
+		67BB985D243892AF00058B7C /* XYCustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BB985C243892AF00058B7C /* XYCustomNavigationBar.m */; };
+		67BB98602438954700058B7C /* XYCustomNavigationBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BB985F2438954700058B7C /* XYCustomNavigationBarViewController.m */; };
+		67BB986324389BFA00058B7C /* XYGradualChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BB986224389BFA00058B7C /* XYGradualChangeViewController.m */; };
+		67EB81D724372DEE00C7669E /* XYLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EB81D624372DEE00C7669E /* XYLoginViewController.m */; };
+		67F261E924459E6F00D509D8 /* RTMPLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F261E724459E6E00D509D8 /* RTMPLiveViewController.m */; };
+		67F261EC2445A3F700D509D8 /* XYNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F261EA2445A3F600D509D8 /* XYNavigationBar.m */; };
 		C22631BFE66EA0AC040F33C6 /* libPods-XYProjectKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D0C09D950B9875C1D3BBB6 /* libPods-XYProjectKit.a */; };
 /* End PBXBuildFile section */
 
@@ -176,6 +192,7 @@
 		67016107228BBF4500D4B8F6 /* XYDynamicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYDynamicViewController.m; sourceTree = "<group>"; };
 		67016109228BBF5200D4B8F6 /* XYPersonalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYPersonalViewController.h; sourceTree = "<group>"; };
 		6701610A228BBF5200D4B8F6 /* XYPersonalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYPersonalViewController.m; sourceTree = "<group>"; };
+		675037AB241F737100E60AE5 /* UIColorMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIColorMacro.h; sourceTree = "<group>"; };
 		675AD9F022D4863D00E20983 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
 		675AD9F122D4863D00E20983 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
 		675AD9F622D4941400E20983 /* XYFullScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYFullScreenViewController.h; sourceTree = "<group>"; };
@@ -423,6 +440,14 @@
 		677FF71A22801E8000EEA474 /* XYHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYHomeViewController.h; sourceTree = "<group>"; };
 		677FF71B22801E8000EEA474 /* XYHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYHomeViewController.m; sourceTree = "<group>"; };
 		677FF75B228035AE00EEA474 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		678E0BCE2439858900D5263C /* XYNavigationBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYNavigationBarView.h; sourceTree = "<group>"; };
+		678E0BCF2439858900D5263C /* XYNavigationBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYNavigationBarView.m; sourceTree = "<group>"; };
+		678E0BD12439B9DC00D5263C /* XYIQKeyboardTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYIQKeyboardTestViewController.h; sourceTree = "<group>"; };
+		678E0BD22439B9DC00D5263C /* XYIQKeyboardTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYIQKeyboardTestViewController.m; sourceTree = "<group>"; };
+		678E0BD42439BB5F00D5263C /* XYIQKeyboardyTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYIQKeyboardyTableViewController.h; sourceTree = "<group>"; };
+		678E0BD52439BB5F00D5263C /* XYIQKeyboardyTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYIQKeyboardyTableViewController.m; sourceTree = "<group>"; };
+		678E0BD72439BE6300D5263C /* XYMoveNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYMoveNavigationViewController.h; sourceTree = "<group>"; };
+		678E0BD82439BE6300D5263C /* XYMoveNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYMoveNavigationViewController.m; sourceTree = "<group>"; };
 		67907B4F22FA8212005051E0 /* XYBaseWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYBaseWebViewController.h; sourceTree = "<group>"; };
 		67907B5022FA8213005051E0 /* XYBaseWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYBaseWebViewController.m; sourceTree = "<group>"; };
 		67907B5222FA83C4005051E0 /* XYWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYWebViewController.h; sourceTree = "<group>"; };
@@ -435,14 +460,10 @@
 		67AC849722F2C9CA00FAB071 /* XYPresentedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYPresentedController.h; sourceTree = "<group>"; };
 		67AC849822F2C9CA00FAB071 /* XYColorBackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYColorBackView.m; sourceTree = "<group>"; };
 		67AC849922F2C9CA00FAB071 /* XYPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYPresentationController.h; sourceTree = "<group>"; };
-		67AC84A222F2D2F000FAB071 /* XYNavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYNavigationBar.h; sourceTree = "<group>"; };
-		67AC84A322F2D2F000FAB071 /* XYNavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYNavigationBar.m; sourceTree = "<group>"; };
 		67AC84A822F5D2D900FAB071 /* XYBaseNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYBaseNavigationViewController.h; sourceTree = "<group>"; };
 		67AC84A922F5D2D900FAB071 /* XYBaseNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYBaseNavigationViewController.m; sourceTree = "<group>"; };
 		67B32DE122B33A5C007FDB41 /* XYShopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYShopViewController.h; sourceTree = "<group>"; };
 		67B32DE222B33A5C007FDB41 /* XYShopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYShopViewController.m; sourceTree = "<group>"; };
-		67B32DEA22B349A0007FDB41 /* XYNormalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYNormalViewController.h; sourceTree = "<group>"; };
-		67B32DEB22B349A0007FDB41 /* XYNormalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYNormalViewController.m; sourceTree = "<group>"; };
 		67B32DF122B34A43007FDB41 /* XYNotAutoPlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYNotAutoPlayViewController.h; sourceTree = "<group>"; };
 		67B32DF222B34A43007FDB41 /* XYNotAutoPlayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYNotAutoPlayViewController.m; sourceTree = "<group>"; };
 		67B32DF922B3778B007FDB41 /* XYPlayerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYPlayerController.h; sourceTree = "<group>"; };
@@ -450,6 +471,33 @@
 		67B32DFF22B3796E007FDB41 /* XYPlayerMediaPlaybackProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYPlayerMediaPlaybackProtocol.h; sourceTree = "<group>"; };
 		67B32E0222B37EFC007FDB41 /* XYPlayerMediaControlProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYPlayerMediaControlProtocol.h; sourceTree = "<group>"; };
 		67B32E0522B382F8007FDB41 /* XYVoidPlayerViewSkin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYVoidPlayerViewSkin.h; sourceTree = "<group>"; };
+		67BB983724386C9C00058B7C /* XYNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYNavigationViewController.h; sourceTree = "<group>"; };
+		67BB983824386C9C00058B7C /* XYNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYNavigationViewController.m; sourceTree = "<group>"; };
+		67BB984424386E6B00058B7C /* XYWordItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYWordItem.h; sourceTree = "<group>"; };
+		67BB984524386E6B00058B7C /* XYWordItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYWordItem.m; sourceTree = "<group>"; };
+		67BB984724386E8500058B7C /* XYWordArrowItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYWordArrowItem.h; sourceTree = "<group>"; };
+		67BB984824386E8500058B7C /* XYWordArrowItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYWordArrowItem.m; sourceTree = "<group>"; };
+		67BB984D2438757E00058B7C /* XYNavigationBarHiddenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYNavigationBarHiddenViewController.h; sourceTree = "<group>"; };
+		67BB984E2438757E00058B7C /* XYNavigationBarHiddenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYNavigationBarHiddenViewController.m; sourceTree = "<group>"; };
+		67BB98502438795300058B7C /* NavigationBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NavigationBar.storyboard; sourceTree = "<group>"; };
+		67BB985224387AB300058B7C /* XYNormalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYNormalViewController.h; sourceTree = "<group>"; };
+		67BB985324387AB300058B7C /* XYNormalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYNormalViewController.m; sourceTree = "<group>"; };
+		67BB985524387BA500058B7C /* XYNoSideslipViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYNoSideslipViewController.h; sourceTree = "<group>"; };
+		67BB985624387BA500058B7C /* XYNoSideslipViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYNoSideslipViewController.m; sourceTree = "<group>"; };
+		67BB98582438891D00058B7C /* XYPushRemoveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYPushRemoveViewController.h; sourceTree = "<group>"; };
+		67BB98592438891D00058B7C /* XYPushRemoveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYPushRemoveViewController.m; sourceTree = "<group>"; };
+		67BB985B243892AF00058B7C /* XYCustomNavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYCustomNavigationBar.h; sourceTree = "<group>"; };
+		67BB985C243892AF00058B7C /* XYCustomNavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYCustomNavigationBar.m; sourceTree = "<group>"; };
+		67BB985E2438954700058B7C /* XYCustomNavigationBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYCustomNavigationBarViewController.h; sourceTree = "<group>"; };
+		67BB985F2438954700058B7C /* XYCustomNavigationBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYCustomNavigationBarViewController.m; sourceTree = "<group>"; };
+		67BB986124389BFA00058B7C /* XYGradualChangeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGradualChangeViewController.h; sourceTree = "<group>"; };
+		67BB986224389BFA00058B7C /* XYGradualChangeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGradualChangeViewController.m; sourceTree = "<group>"; };
+		67EB81D524372DEE00C7669E /* XYLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYLoginViewController.h; sourceTree = "<group>"; };
+		67EB81D624372DEE00C7669E /* XYLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYLoginViewController.m; sourceTree = "<group>"; };
+		67F261E724459E6E00D509D8 /* RTMPLiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTMPLiveViewController.m; sourceTree = "<group>"; };
+		67F261E824459E6F00D509D8 /* RTMPLiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTMPLiveViewController.h; sourceTree = "<group>"; };
+		67F261EA2445A3F600D509D8 /* XYNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYNavigationBar.m; sourceTree = "<group>"; };
+		67F261EB2445A3F700D509D8 /* XYNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYNavigationBar.h; sourceTree = "<group>"; };
 		75D0C09D950B9875C1D3BBB6 /* libPods-XYProjectKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYProjectKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		778850359F42FB261209D02C /* libPods-XYProjectKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYProjectKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A210BB68D624ED94C71B262 /* libPods-XYProjectKitUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYProjectKitUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -618,6 +666,7 @@
 		677FF0D4227FFA4A00EEA474 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				67F261E624459E6100D509D8 /* Live */,
 				67B32DF422B370E6007FDB41 /* AlivcVideoPlayView */,
 				67B32DE722B348EB007FDB41 /* Video */,
 				67B32DE022B33A3F007FDB41 /* Shop */,
@@ -996,6 +1045,7 @@
 		677FF3CE227FFA4B00EEA474 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				67BB983A24386DB500058B7C /* BaseModels */,
 				67016103228BBC1200D4B8F6 /* XYBaseTabBarViewController.h */,
 				67016104228BBC1200D4B8F6 /* XYBaseTabBarViewController.m */,
 				675AD9F922D494C100E20983 /* XYBaseViewController.h */,
@@ -1066,6 +1116,7 @@
 				677FF3EE227FFA4B00EEA474 /* VendorMarco.h */,
 				677FF3EF227FFA4B00EEA474 /* NotificationMacro.h */,
 				677FF3F0227FFA4B00EEA474 /* PrefixHeader.pch */,
+				675037AB241F737100E60AE5 /* UIColorMacro.h */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -1084,7 +1135,7 @@
 		677FF3F8227FFA4B00EEA474 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				67AC84A122F2D2C600FAB071 /* XYNavigationBar */,
+				67EB81DB243736BD00C7669E /* XYNavigationBar */,
 				675ADA1922D5DC9D00E20983 /* XYShare */,
 				675ADA0E22D5CA5200E20983 /* XYLaunchAdManager */,
 				677FF396227FFA4B00EEA474 /* NewFeature */,
@@ -1269,10 +1320,24 @@
 		677FF71922801E6A00EEA474 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				67BB9836243862DA00058B7C /* 导航栏 */,
 				677FF71A22801E8000EEA474 /* XYHomeViewController.h */,
 				677FF71B22801E8000EEA474 /* XYHomeViewController.m */,
+				67EB81D524372DEE00C7669E /* XYLoginViewController.h */,
+				67EB81D624372DEE00C7669E /* XYLoginViewController.m */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		678E0BCD2439856900D5263C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				67BB985B243892AF00058B7C /* XYCustomNavigationBar.h */,
+				67BB985C243892AF00058B7C /* XYCustomNavigationBar.m */,
+				678E0BCE2439858900D5263C /* XYNavigationBarView.h */,
+				678E0BCF2439858900D5263C /* XYNavigationBarView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		67AC849122F2C9CA00FAB071 /* XYDropMenu */ = {
@@ -1288,15 +1353,6 @@
 				67AC849922F2C9CA00FAB071 /* XYPresentationController.h */,
 			);
 			path = XYDropMenu;
-			sourceTree = "<group>";
-		};
-		67AC84A122F2D2C600FAB071 /* XYNavigationBar */ = {
-			isa = PBXGroup;
-			children = (
-				67AC84A222F2D2F000FAB071 /* XYNavigationBar.h */,
-				67AC84A322F2D2F000FAB071 /* XYNavigationBar.m */,
-			);
-			path = XYNavigationBar;
 			sourceTree = "<group>";
 		};
 		67B32DE022B33A3F007FDB41 /* Shop */ = {
@@ -1321,8 +1377,6 @@
 		67B32DE822B348F7007FDB41 /* Normal */ = {
 			isa = PBXGroup;
 			children = (
-				67B32DEA22B349A0007FDB41 /* XYNormalViewController.h */,
-				67B32DEB22B349A0007FDB41 /* XYNormalViewController.m */,
 			);
 			path = Normal;
 			sourceTree = "<group>";
@@ -1381,6 +1435,64 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		67BB9836243862DA00058B7C /* 导航栏 */ = {
+			isa = PBXGroup;
+			children = (
+				678E0BCD2439856900D5263C /* View */,
+				67BB983724386C9C00058B7C /* XYNavigationViewController.h */,
+				67BB983824386C9C00058B7C /* XYNavigationViewController.m */,
+				67BB985224387AB300058B7C /* XYNormalViewController.h */,
+				67BB985324387AB300058B7C /* XYNormalViewController.m */,
+				67BB985524387BA500058B7C /* XYNoSideslipViewController.h */,
+				67BB985624387BA500058B7C /* XYNoSideslipViewController.m */,
+				67BB984D2438757E00058B7C /* XYNavigationBarHiddenViewController.h */,
+				67BB984E2438757E00058B7C /* XYNavigationBarHiddenViewController.m */,
+				67BB98582438891D00058B7C /* XYPushRemoveViewController.h */,
+				67BB98592438891D00058B7C /* XYPushRemoveViewController.m */,
+				67BB98502438795300058B7C /* NavigationBar.storyboard */,
+				67BB985E2438954700058B7C /* XYCustomNavigationBarViewController.h */,
+				67BB985F2438954700058B7C /* XYCustomNavigationBarViewController.m */,
+				67BB986124389BFA00058B7C /* XYGradualChangeViewController.h */,
+				67BB986224389BFA00058B7C /* XYGradualChangeViewController.m */,
+				678E0BD12439B9DC00D5263C /* XYIQKeyboardTestViewController.h */,
+				678E0BD22439B9DC00D5263C /* XYIQKeyboardTestViewController.m */,
+				678E0BD42439BB5F00D5263C /* XYIQKeyboardyTableViewController.h */,
+				678E0BD52439BB5F00D5263C /* XYIQKeyboardyTableViewController.m */,
+				678E0BD72439BE6300D5263C /* XYMoveNavigationViewController.h */,
+				678E0BD82439BE6300D5263C /* XYMoveNavigationViewController.m */,
+			);
+			path = "导航栏";
+			sourceTree = "<group>";
+		};
+		67BB983A24386DB500058B7C /* BaseModels */ = {
+			isa = PBXGroup;
+			children = (
+				67BB984424386E6B00058B7C /* XYWordItem.h */,
+				67BB984524386E6B00058B7C /* XYWordItem.m */,
+				67BB984724386E8500058B7C /* XYWordArrowItem.h */,
+				67BB984824386E8500058B7C /* XYWordArrowItem.m */,
+			);
+			path = BaseModels;
+			sourceTree = "<group>";
+		};
+		67EB81DB243736BD00C7669E /* XYNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				67F261EB2445A3F700D509D8 /* XYNavigationBar.h */,
+				67F261EA2445A3F600D509D8 /* XYNavigationBar.m */,
+			);
+			path = XYNavigationBar;
+			sourceTree = "<group>";
+		};
+		67F261E624459E6100D509D8 /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				67F261E824459E6F00D509D8 /* RTMPLiveViewController.h */,
+				67F261E724459E6E00D509D8 /* RTMPLiveViewController.m */,
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
 		C3A63E6A94936D1F6A613523 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1403,7 +1515,7 @@
 				677FF09B227FE71300EEA474 /* Frameworks */,
 				677FF09C227FE71300EEA474 /* Resources */,
 				F3062C1465E8CBA6ABF32388 /* [CP] Copy Pods Resources */,
-				C095C9A4310FD80CA94DD531 /* [CP] Embed Pods Frameworks */,
+				80EC3FE2C8D680985B3A333F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1506,6 +1618,7 @@
 				677FF71822801BB900EEA474 /* motion.mp3 in Resources */,
 				677FF623227FFA4D00EEA474 /* Debug.storyboard in Resources */,
 				677FF708227FFA4D00EEA474 /* XYAddressCity.plist in Resources */,
+				67BB98512438795300058B7C /* NavigationBar.storyboard in Resources */,
 				675ADA0722D4DA7800E20983 /* MBHUD.bundle in Resources */,
 				675ADA1522D5D21100E20983 /* lunchAdImage2.gif in Resources */,
 				677FF704227FFA4D00EEA474 /* XYCalendarCollectionViewCell.xib in Resources */,
@@ -1529,28 +1642,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C095C9A4310FD80CA94DD531 /* [CP] Embed Pods Frameworks */ = {
+		80EC3FE2C8D680985B3A333F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-XYProjectKit/Pods-XYProjectKit-frameworks.sh",
-				"${PODS_ROOT}/AliyunPlayer_iOS/AliyunPlayerSDK.framework",
-				"${PODS_ROOT}/AliyunPlayer_iOS/AliThirdparty.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-XYProjectKit/Pods-XYProjectKit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AliyunPlayerSDK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AliThirdparty.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-XYProjectKit/Pods-XYProjectKit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XYProjectKit/Pods-XYProjectKit-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XYProjectKit/Pods-XYProjectKit-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DD2FC255D25E13CC8C86881A /* [CP] Check Pods Manifest.lock */ = {
@@ -1581,30 +1687,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-XYProjectKit/Pods-XYProjectKit-resources.sh",
-				"${PODS_ROOT}/AliyunPlayer_iOS/AliyunLanguageSource.bundle",
-				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
-				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
-				"${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle",
-				"${PODS_ROOT}/UMCShare/UMShare/UMSocialUI/UMSocialSDKResources.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-XYProjectKit/Pods-XYProjectKit-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AliyunLanguageSource.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TZImagePickerController.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKResources.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-XYProjectKit/Pods-XYProjectKit-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XYProjectKit/Pods-XYProjectKit-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XYProjectKit/Pods-XYProjectKit-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1614,6 +1705,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67BB986324389BFA00058B7C /* XYGradualChangeViewController.m in Sources */,
 				675ADA2D22D5DC9D00E20983 /* XYShareUIViewController.m in Sources */,
 				677FF705227FFA4D00EEA474 /* XYStringPickerView.m in Sources */,
 				677FF636227FFA4D00EEA474 /* UIView+AddLines.m in Sources */,
@@ -1624,7 +1716,6 @@
 				677FF6B2227FFA4D00EEA474 /* XLPaymentLoadingHUD.m in Sources */,
 				67B32DF322B34A43007FDB41 /* XYNotAutoPlayViewController.m in Sources */,
 				677FF0B1227FE71500EEA474 /* main.m in Sources */,
-				67AC84A422F2D2F000FAB071 /* XYNavigationBar.m in Sources */,
 				677FF6FA227FFA4D00EEA474 /* XYAlertSheetView.m in Sources */,
 				677FF641227FFA4D00EEA474 /* UIView+ViewController.m in Sources */,
 				677FF687227FFA4D00EEA474 /* JXPagerListRefreshView.m in Sources */,
@@ -1641,6 +1732,7 @@
 				677FF64A227FFA4D00EEA474 /* NSString+XYExt.m in Sources */,
 				677FF64C227FFA4D00EEA474 /* NSString+AlivcHelper.m in Sources */,
 				67AC849C22F2C9CA00FAB071 /* XYPresentAnimationManager.m in Sources */,
+				67BB984F2438757E00058B7C /* XYNavigationBarHiddenViewController.m in Sources */,
 				677FF638227FFA4D00EEA474 /* UIView+XYShadowPath.m in Sources */,
 				677FF64B227FFA4D00EEA474 /* NSString+RegexCategory.m in Sources */,
 				677FF6A5227FFA4D00EEA474 /* WKWebViewController.m in Sources */,
@@ -1648,6 +1740,7 @@
 				677FF656227FFA4D00EEA474 /* XYConstantDataCenter.m in Sources */,
 				677FF70D227FFA4D00EEA474 /* UIImage+TYSnapshot.m in Sources */,
 				677FF6FE227FFA4D00EEA474 /* KeychainHelper.m in Sources */,
+				67BB984624386E6B00058B7C /* XYWordItem.m in Sources */,
 				677FF65A227FFA4D00EEA474 /* XYPrivacyManager.m in Sources */,
 				67907B5122FA8213005051E0 /* XYBaseWebViewController.m in Sources */,
 				677FF629227FFA4D00EEA474 /* UIImage+AlivcHelper.m in Sources */,
@@ -1667,8 +1760,12 @@
 				675ADA1822D5D45300E20983 /* XYLaunchAdManager.m in Sources */,
 				677FF71622801B7700EEA474 /* UIWindow+Motion.m in Sources */,
 				677FF700227FFA4D00EEA474 /* XYCustomDatePickView.m in Sources */,
+				67EB81D724372DEE00C7669E /* XYLoginViewController.m in Sources */,
+				67BB985D243892AF00058B7C /* XYCustomNavigationBar.m in Sources */,
 				677FF652227FFA4D00EEA474 /* NSDate+Extension.m in Sources */,
 				67AC849A22F2C9CA00FAB071 /* XYPresentedController.m in Sources */,
+				678E0BD02439858900D5263C /* XYNavigationBarView.m in Sources */,
+				67BB983924386C9C00058B7C /* XYNavigationViewController.m in Sources */,
 				675ADA2822D5DC9D00E20983 /* XYShareMenuBtnView.m in Sources */,
 				677FF631227FFA4D00EEA474 /* UIButton+XYTouch.m in Sources */,
 				677FF701227FFA4D00EEA474 /* XYBasePickerView.m in Sources */,
@@ -1676,6 +1773,7 @@
 				677FF63D227FFA4D00EEA474 /* UITextView+XYExtension.m in Sources */,
 				677FF639227FFA4D00EEA474 /* UIView+XYExt.m in Sources */,
 				675AD9FB22D494C100E20983 /* XYBaseViewController.m in Sources */,
+				67BB984924386E8500058B7C /* XYWordArrowItem.m in Sources */,
 				677FF626227FFA4D00EEA474 /* UIImage+CFQRcode.m in Sources */,
 				677FF6FD227FFA4D00EEA474 /* KeychainUUID.m in Sources */,
 				677FF655227FFA4D00EEA474 /* XYGlobalConst.m in Sources */,
@@ -1689,7 +1787,6 @@
 				677FF628227FFA4D00EEA474 /* UIImage+Merge.m in Sources */,
 				677FF70C227FFA4D00EEA474 /* UIScrollView+TYSnapshot.m in Sources */,
 				677FF653227FFA4D00EEA474 /* NSDateFormatter+Extension.m in Sources */,
-				67B32DEC22B349A0007FDB41 /* XYNormalViewController.m in Sources */,
 				677FF65E227FFA4D00EEA474 /* XYTimeTools.m in Sources */,
 				677FF643227FFA4D00EEA474 /* UINavigationController+XYExt.m in Sources */,
 				677FF684227FFA4D00EEA474 /* JXPagerListContainerView.m in Sources */,
@@ -1699,6 +1796,8 @@
 				67907B5422FA83C4005051E0 /* XYWebViewController.m in Sources */,
 				675ADA0A22D5903D00E20983 /* XYNewFeatureViewController.m in Sources */,
 				677FF625227FFA4D00EEA474 /* UIImage+XYExt.m in Sources */,
+				678E0BD62439BB5F00D5263C /* XYIQKeyboardyTableViewController.m in Sources */,
+				67BB985724387BA500058B7C /* XYNoSideslipViewController.m in Sources */,
 				675AD9F822D4941400E20983 /* XYFullScreenViewController.m in Sources */,
 				677FF645227FFA4D00EEA474 /* NSString+XYAES.m in Sources */,
 				67B32DFB22B3778B007FDB41 /* XYPlayerController.m in Sources */,
@@ -1712,15 +1811,20 @@
 				675ADA2C22D5DC9D00E20983 /* XYSharePresentAnimation.m in Sources */,
 				677FF7132280149900EEA474 /* AppDelegate+XYAppService.m in Sources */,
 				677FF703227FFA4D00EEA474 /* XYDatePickerView.m in Sources */,
+				678E0BD32439B9DC00D5263C /* XYIQKeyboardTestViewController.m in Sources */,
+				67F261EC2445A3F700D509D8 /* XYNavigationBar.m in Sources */,
 				677FF6B8227FFA4D00EEA474 /* XYNetworkingHelper.m in Sources */,
 				677FF6BB227FFA4D00EEA474 /* GTMBase64.m in Sources */,
+				67F261E924459E6F00D509D8 /* RTMPLiveViewController.m in Sources */,
 				677FF62C227FFA4D00EEA474 /* UILabel+XYCopy.m in Sources */,
 				677FF65D227FFA4D00EEA474 /* XYCardNoFormatter.m in Sources */,
+				678E0BD92439BE6300D5263C /* XYMoveNavigationViewController.m in Sources */,
 				677FF650227FFA4D00EEA474 /* NSObject+XYSwizzle.m in Sources */,
 				677FF63B227FFA4D00EEA474 /* UIView+XYMaskLight.m in Sources */,
 				677FF665227FFA4D00EEA474 /* FDAlertView.m in Sources */,
 				677FF649227FFA4D00EEA474 /* NSDictionary+XYNetworking.m in Sources */,
 				677FF6A7227FFA4D00EEA474 /* WebChatPayH5VIew.m in Sources */,
+				67BB985424387AB300058B7C /* XYNormalViewController.m in Sources */,
 				67AC849B22F2C9CA00FAB071 /* XYPresentationController.m in Sources */,
 				67016105228BBC1200D4B8F6 /* XYBaseTabBarViewController.m in Sources */,
 				675AD9F222D4863D00E20983 /* UIImage+RoundedCorner.m in Sources */,
@@ -1731,12 +1835,14 @@
 				67AC84AA22F5D2D900FAB071 /* XYBaseNavigationViewController.m in Sources */,
 				677FF65C227FFA4D00EEA474 /* XYCountingLabel.m in Sources */,
 				677FF6B9227FFA4D00EEA474 /* XYNetworkRequest.m in Sources */,
+				67BB985A2438891D00058B7C /* XYPushRemoveViewController.m in Sources */,
 				677FF6AE227FFA4D00EEA474 /* YYFPSLabel.m in Sources */,
 				677FF707227FFA4D00EEA474 /* XYPickerTextField.m in Sources */,
 				675ADA0522D4C5B900E20983 /* NSError+XYCommon.m in Sources */,
 				677FF709227FFA4D00EEA474 /* XYBaseView.m in Sources */,
 				677FF6B3227FFA4D00EEA474 /* XYAPIValidator.m in Sources */,
 				675ADA2B22D5DC9D00E20983 /* XYShareMenuView.m in Sources */,
+				67BB98602438954700058B7C /* XYCustomNavigationBarViewController.m in Sources */,
 				675ADA2E22D5DC9D00E20983 /* XYShareHelp.m in Sources */,
 				677FF685227FFA4D00EEA474 /* JXPagerMainTableView.m in Sources */,
 				677FF65B227FFA4D00EEA474 /* XYAppCrashProcessManager.m in Sources */,
@@ -1894,10 +2000,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4J674V9K2Y;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Classess/Vender/AipOcrSdk",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Classess/Macro/PrefixHeader.pch;
 				INFOPLIST_FILE = XYProjectKit/Info.plist;
@@ -1908,7 +2011,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.XYProjectKit.ixy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WARNING_CFLAGS = "-Wno-deprecated-declarations";
 			};
 			name = Debug;
@@ -1920,10 +2023,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4J674V9K2Y;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Classess/Vender/AipOcrSdk",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Classess/Macro/PrefixHeader.pch;
 				INFOPLIST_FILE = XYProjectKit/Info.plist;
@@ -1934,7 +2034,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.XYProjectKit.ixy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WARNING_CFLAGS = "-Wno-deprecated-declarations";
 			};
 			name = Release;

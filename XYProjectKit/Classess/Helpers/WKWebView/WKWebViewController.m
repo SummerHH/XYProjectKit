@@ -615,7 +615,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 
 -(UIBarButtonItem*)customBackBarItem{
     if (!_customBackBarItem) {
-        _customBackBarItem = [[UIBarButtonItem alloc] initWithImage:IMAGENAMED(@"NavgationBar_black.png") style:UIBarButtonItemStylePlain target:self action:@selector(customBackItemClicked)];
+        _customBackBarItem = [[UIBarButtonItem alloc] initWithImage:IMAGENAMED(@"bblink_ic_nav_back_22x22_.png") style:UIBarButtonItemStylePlain target:self action:@selector(customBackItemClicked)];
     }
     
     return _customBackBarItem;

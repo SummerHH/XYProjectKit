@@ -14,7 +14,8 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - AliyunPlayer_iOS/AliyunPlayerSDK (3.4.10)
+  - AlipaySDK-iOS (15.5.9)
+  - Aspects (1.4.1)
   - AvoidCrash (2.5.2)
   - Bugly (2.5.0)
   - FLAnimatedImage (1.0.12)
@@ -30,6 +31,12 @@ PODS:
   - MJExtension (3.0.17)
   - MJRefresh (3.2.0)
   - NullSafe (2.0)
+  - PLMediaStreamingKit (2.3.5):
+    - PLMediaStreamingKit/iphoneos (= 2.3.5)
+  - PLMediaStreamingKit/iphoneos (2.3.5)
+  - PLPlayerKit (3.4.3):
+    - PLPlayerKit/iphoneos (= 3.4.3)
+  - PLPlayerKit/iphoneos (3.4.3)
   - Reachability (3.2)
   - RTRootNavigationController (0.7.1):
     - RTRootNavigationController/Core (= 0.7.1)
@@ -64,7 +71,8 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
-  - AliyunPlayer_iOS/AliyunPlayerSDK
+  - AlipaySDK-iOS
+  - Aspects (~> 1.4.1)
   - AvoidCrash
   - Bugly
   - FLEX (~> 2.4.0)
@@ -77,6 +85,8 @@ DEPENDENCIES:
   - MJExtension
   - MJRefresh
   - NullSafe
+  - PLMediaStreamingKit
+  - PLPlayerKit
   - Reachability (~> 3.2)
   - RTRootNavigationController
   - SDCycleScrollView
@@ -93,9 +103,9 @@ DEPENDENCIES:
   - YYCache
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
-    - AliyunPlayer_iOS
+    - AlipaySDK-iOS
     - AvoidCrash
     - Bugly
     - FLAnimatedImage
@@ -120,10 +130,15 @@ SPEC REPOS:
     - UMCShare
     - XHLaunchAd
     - YYCache
+  trunk:
+    - Aspects
+    - PLMediaStreamingKit
+    - PLPlayerKit
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  AliyunPlayer_iOS: 759820a9348ac0d1aff853034216a89ff4f843b2
+  AlipaySDK-iOS: 1c5283b30977a24acecc0114662697f7dc78f618
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   AvoidCrash: 28c6916fe19bd2b84126b8dec7cbe61c9a12741d
   Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
@@ -137,6 +152,8 @@ SPEC CHECKSUMS:
   MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   NullSafe: 948feba938f03abede5ed3758694a9fe5b3a65ce
+  PLMediaStreamingKit: f457a9a15bf1c31eccb894f0fe7e18fd301b055e
+  PLPlayerKit: a44734dc78c1f8f9fb22c537fa1916612fa46b06
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   RTRootNavigationController: afa6913402be26f8326f7f37fc1550aa67baddcc
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
@@ -149,6 +166,6 @@ SPEC CHECKSUMS:
   XHLaunchAd: 45048592af01aa501c9d2d0c45e95ca74c4d0596
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: b29e3c7d3f2bf10e259fafe0f5b82a33ee793439
+PODFILE CHECKSUM: 8022f36b77e02bfb1d866feb2cef4665170c8f3b
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.0.beta.2

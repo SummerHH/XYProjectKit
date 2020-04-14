@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <AvoidCrash/AvoidCrash.h>
+#import <PLMediaStreamingKit/PLMediaStreamingKit.h>
 
 @interface AppDelegate ()
 
@@ -46,6 +47,9 @@
     //监听通知:AvoidCrashNotification, 获取AvoidCrash捕获的崩溃日志的详细信息
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dealwithCrashMessage:) name:AvoidCrashNotification object:nil];
     
+    [self NetWorkConfig];
+    
+    [PLStreamingEnv initEnv];
 
     return YES;
 }

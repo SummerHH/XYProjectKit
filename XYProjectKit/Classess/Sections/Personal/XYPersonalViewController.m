@@ -23,7 +23,6 @@
 - (void)viewWillAppear:(BOOL)animated {
 
     [super viewWillAppear:animated];
-    [self xy_setStatusBarStyle:UIStatusBarStyleDefault];
 
 }
 

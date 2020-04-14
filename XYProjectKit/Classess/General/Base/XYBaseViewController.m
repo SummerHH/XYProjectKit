@@ -18,9 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor whiteColor];
-    /// 自定义导航栏返回按钮,单个不同的按钮样式可在单独 viewController 中实现下面 rt_customBackItemWithTarget 方法
-    self.rt_navigationController.useSystemBackBarButtonItem = NO;
+    self.view.backgroundColor = kRandColor;
     
 }
 

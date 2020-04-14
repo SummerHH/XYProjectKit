@@ -144,11 +144,32 @@
     
 }
 
+- (void)testNetworking {
+    
+    NSDictionary * param = @{
+                               @"currentDate" :@"2019-08-09 11:47:38",
+                               @"deviceId" : @"865629031385172",
+                               @"model" : @"OPPO R9sk",
+                               @"password" : @"0203011159",
+                               @"userId" : @"18553265047",
+                               @"versionCode" : @"32"
+                               };
+    
+      NSString *jsonString = [XYJsonConversion jsonWithDictionary:param];
+      
+      NSDictionary *dict = @{@"data" : jsonString,@"requestCode" : @"008006"};
+      
+      [XYNetworkingHelper setRequestSerializer:XYNetRequestSerializerJSON];
+      [XYNetworkingHelper setHttpHeaderFieldDictionary:@{@"requestCode":@"001001"}];
+      
+      [XYNetworkingHelper POST:@"http://218.17.200.230:8099/mobileService/ifc" parameters:dict callback:^(XYNetworkRequest *request, XYNetworkResponse *responseObject, BOOL isFromCache) {
+
+      }];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end

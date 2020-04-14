@@ -16,18 +16,46 @@
  *  @return    Color
  */
 
-+ (UIColor *)colorFromHexString:(NSString *)hexString;
++ (instancetype)colorFromHexString:(NSString *)hexString;
 
-/**i
+/**
+ *  @brief 颜色传入的是十六进制字符串
+ *  @param alpha 颜色的透明度
+ *  @return color
+ */
++ (instancetype)colorFromHexString:(NSString *)hexString alpha:(CGFloat)alpha;
+
+/**
+ *  @brief 适配暗黑模式颜色   传入的UIColor对象
+ *  @param lightColor 普通模式颜色
+ *  @param darkColor 暗黑模式颜色
+ */
++ (UIColor *)colorWithLightColor:(UIColor *)lightColor DarkColor:(UIColor *)darkColor;
+
+/**
+ *  @brief 适配暗黑模式   颜色传入的是 16 进制字符串
+ *  @param lightColor 普通模式颜色
+ *  @param darkColor 暗黑模式颜色
+ */
++ (UIColor *)colorWithLightColorHexString:(NSString *)lightColor DarkColor:(NSString *)darkColor;
+
+/**
+ *  @brief 适配暗黑模式   颜色传入的是 16 进制字符串 还有透明度
+ *  @param lightColor 普通模式颜色
+ *  @param lightAlpha 普通模式颜色透明度
+ *  @param darkColor 暗黑模式颜色
+ *  @param darkAlpha 暗黑模式颜色透明度
+ */
++ (UIColor *)colorWithLightColorHexString:(NSString *)lightColor WithLightColorAlpha:(CGFloat)lightAlpha DarkColor:(NSString *)darkColor WithDarkColorAlpha:(CGFloat)darkAlpha;
+
+/**
  *  @brief  渐变颜色
- *
  *  @param c1     开始颜色
  *  @param c2     结束颜色
  *  @param height 渐变高度
- *
  *  @return 渐变颜色
  */
-+ (UIColor*)gradientFromColor:(UIColor*)c1 toColor:(UIColor*)c2 withHeight:(int)height;
++ (UIColor *)gradientFromColor:(UIColor*)c1 toColor:(UIColor*)c2 withHeight:(int)height;
 
 
 @end

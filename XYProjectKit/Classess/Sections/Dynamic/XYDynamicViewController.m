@@ -19,30 +19,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor redColor];
  
-    UIButton *persent = [UIButton buttonWithType:UIButtonTypeCustom];
-    persent.frame = CGRectMake(100, 100, 80, 40);
-    [persent setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [persent setTitle:@"模态视图" forState:UIControlStateNormal];
-    [persent addTarget:self action:@selector(persentClick:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:persent];
-    
-    UITextField *textField = [[UITextField alloc] init];
-    textField.frame = CGRectMake(100, 180, 200, 50);
-    textField.backgroundColor = [UIColor purpleColor];
-    textField.borderStyle = UITextBorderStyleLine;
-    [self.view addSubview:textField];
+ 
 }
 
-- (void)persentClick:(UIButton *)sender {
-
-    XYHomeViewController *homeVC = [[XYHomeViewController alloc] init];
-    RTRootNavigationController *nav = [[RTRootNavigationController alloc] initWithRootViewController:homeVC];
-    
-    [self presentViewController:nav animated:YES completion:nil];
-}
 
 /*
 #pragma mark - Navigation

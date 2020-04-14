@@ -15,7 +15,7 @@ static const CGFloat hideTime = 2.0f;
 
 + (MBProgressHUD*)createMBProgressHUDviewWithMessage:(NSString*)message isWindiw:(BOOL)isWindow {
 
-    UIView  *view = isWindow? (UIView*)[UIApplication sharedApplication].delegate.window:[[AppDelegate shareAppDelegate] getCurrentUIVC].view;
+    UIView  *view = isWindow? (UIView*)[UIApplication sharedApplication].delegate.window:[[AppDelegate shareAppDelegate] getCurrentViewController].view;
     
     MBProgressHUD * hud = [MBProgressHUD HUDForView:view];
     if (!hud) {
@@ -175,8 +175,6 @@ static const CGFloat hideTime = 2.0f;
     return HUD;
 }
 
-
-
 #pragma mark-------------------- show Image----------------------------
 
 + (void)showMessage:(NSString *)message {
@@ -268,7 +266,7 @@ static const CGFloat hideTime = 2.0f;
        
         UIView  *winView =(UIView*)[UIApplication sharedApplication].delegate.window;
         [self hideHUDForView:winView animated:YES];
-        [self hideHUDForView:[[AppDelegate shareAppDelegate] getCurrentUIVC].view animated:YES];
+        [self hideHUDForView:[[AppDelegate shareAppDelegate] getCurrentViewController].view animated:YES];
         
     });
 }

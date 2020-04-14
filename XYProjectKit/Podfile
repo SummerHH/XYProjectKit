@@ -21,7 +21,9 @@ pod 'JXCategoryView'
 pod 'SDCycleScrollView'
 pod 'TZImagePickerController'
 pod 'YYCache'
+#导航
 pod 'RTRootNavigationController'
+pod 'Aspects', '~> 1.4.1'
 
 #bugly
 pod 'Bugly'
@@ -36,9 +38,14 @@ pod 'UMCShare/Social/ReducedQQ'
 pod 'UMCShare/Social/ReducedSina'
 
 #aliyun
-pod 'AliyunPlayer_iOS/AliyunPlayerSDK'
+#pod 'AliyunPlayer_iOS/AliyunPlayerSDK'
 pod 'Reachability', '~> 3.2'
-
+pod 'AlipaySDK-iOS'
 #调试黑魔法
 pod 'FLEX', '~> 2.4.0'
+# 七牛推流 SDK
+pod 'PLMediaStreamingKit'
+# 七牛播放 SDK
+pod 'PLPlayerKit'
+
 end

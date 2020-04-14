@@ -21,27 +21,98 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    [self addChildViewControllers];
+    // 设置 tabBar 的代理
+    self.delegate = self;
     
-    NSArray *className = @[@"XYHomeViewController",@"XYChannelViewController",@"XYDynamicViewController",@"XYShopViewController",@"XYPersonalViewController"];
+    [self initializeTabBarStatus];
     
-    NSArray *barName = @[@"首页",@"频道",@"动态",@"会员购",@"我的"];
+}
+
+- (void)addChildViewControllers {
     
-    NSArray *barImageNor = @[@"bottom_tabbar_mainhome_normal.png",@"bottom_tabbar_pegasuschannel_normal.png",@"bottom_tabbar_followinghome_normal.png",@"bottom_tabbar_mallhome_normal.png",@"bottom_tabbar_user_center_normal.png"];
+    NSDictionary *firstTabBarItemsAttributes = @{
+        @"tabBarItemTitle" : @"首页",
+        @"tabBarViewController" : @"XYHomeViewController",
+        @"tabBarItemImage" : @"bottom_tabbar_mainhome_normal.png",
+        @"tabBarItemSelectedImage" : @"bottom_tabbar_mainhome_selected.png"
+    };
     
-    NSArray *barImageSel = @[@"bottom_tabbar_mainhome_selected.png",@"bottom_tabbar_pegasuschannel_selected.png",@"bottom_tabbar_followinghome_selected.png",@"bottom_tabbar_mallhome_selected.png",@"bottom_tabbar_user_center_selected.png"];
+    NSDictionary *twoTabBarItemsAttributes = @{
+        @"tabBarItemTitle" : @"频道",
+        @"tabBarViewController" : @"XYChannelViewController",
+        @"tabBarItemImage" : @"bottom_tabbar_pegasuschannel_normal.png",
+        @"tabBarItemSelectedImage" : @"bottom_tabbar_pegasuschannel_selected.png"
+    };
+    
+    NSDictionary *threeTabBarItemsAttributes = @{
+        @"tabBarItemTitle" : @"动态",
+        @"tabBarViewController" : @"XYDynamicViewController",
+        @"tabBarItemImage" : @"bottom_tabbar_followinghome_normal.png",
+        @"tabBarItemSelectedImage" : @"bottom_tabbar_followinghome_selected.png"
+    };
+    
+    NSDictionary *fourTabBarItemsAttributes = @{
+        @"tabBarItemTitle" : @"会员购",
+        @"tabBarViewController" : @"XYShopViewController",
+        @"tabBarItemImage" : @"bottom_tabbar_mallhome_normal.png",
+        @"tabBarItemSelectedImage" : @"bottom_tabbar_mallhome_selected.png"
+    };
+    
+    NSDictionary *fiveTabBarItemsAttributes = @{
+        @"tabBarItemTitle" : @"我的",
+        @"tabBarViewController" : @"XYPersonalViewController",
+        @"tabBarItemImage" : @"bottom_tabbar_user_center_normal.png",
+        @"tabBarItemSelectedImage" : @"bottom_tabbar_user_center_selected.png"
+    };
+    
+    NSArray <NSDictionary *> *tabBarItemsAttributes = @[
+        firstTabBarItemsAttributes,
+        twoTabBarItemsAttributes,
+        threeTabBarItemsAttributes,
+        fourTabBarItemsAttributes,
+        fiveTabBarItemsAttributes
+    ];
     
     NSMutableArray *tempNavArr = [NSMutableArray new];
-    for (int i = 0; i < className.count; i++) {
-        RTContainerNavigationController *nav = [self itemChildViewController:className[i] title:barName[i] imageName:barImageNor[i] selectedImage:barImageSel[i]];
+
+    [tabBarItemsAttributes enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
+         RTContainerNavigationController *nav = [self itemChildViewController:obj[@"tabBarViewController"] title:obj[@"tabBarItemTitle"] imageName:obj[@"tabBarItemImage"] selectedImage:obj[@"tabBarItemSelectedImage"]];
         [tempNavArr addObject:nav];
-    }
+    }];
     
     self.viewControllers = tempNavArr;
     
-    // 设置 tabBar 的代理
-    self.delegate = self;
+    
+}
+
+- (void)initializeTabBarStatus {
+    if (@available(iOS 13.0, *)) {
+        UITabBarAppearance *appearance = [UITabBarAppearance new];
+        // 设置未被选中的颜色
+        appearance.stackedLayoutAppearance.normal.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor colorFromHexString:kTabBarItemNormalTintColor],NSFontAttributeName:SYSTEMFONT(10.0f)};
+        // 设置被选中时的颜色
+        appearance.stackedLayoutAppearance.selected.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor colorFromHexString:kTabBarItemSelectedTintColor],NSFontAttributeName:SYSTEMFONT(10.0f)};
+        
+        /// 隐藏 tabBar 上面的线
+//        appearance.backgroundImage = [UIImage imageWithColor:[UIColor whiteColor]];
+//        appearance.shadowColor = [UIColor clearColor];
+
+        /// 设置TabBar的背景颜色
+        UIImage *backgroundImage = [UIImage imageWithColor:kNavigationColor size:self.tabBar.frame.size];
+        appearance.backgroundImage =  backgroundImage;
+        
+        self.tabBar.standardAppearance = appearance;
+        
+    } else {
+        //title设置
+        [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorFromHexString:kTabBarItemNormalTintColor],NSFontAttributeName:SYSTEMFONT(10.0f)} forState:UIControlStateNormal];
+        [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorFromHexString:kTabBarItemSelectedTintColor],NSFontAttributeName:SYSTEMFONT(10.0f)} forState:UIControlStateSelected];
+        /// ios 13以下隐藏 tabbar 上面线的方法
+        [self removeTabarTopLine];
+    }
     
 }
 
@@ -57,20 +128,23 @@
     vc.tabBarItem.image = [[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     vc.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    //title设置
-    [vc.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorFromHexString:@"#757575"],NSFontAttributeName:SYSTEMFONT(10.0f)} forState:UIControlStateNormal];
-    [vc.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorFromHexString:@"#FB7299"],NSFontAttributeName:SYSTEMFONT(10.0f)} forState:UIControlStateSelected];
     vc.tabBarItem.titlePositionAdjustment = UIOffsetMake(0, -4);
     vc.tabBarItem.title = title;
 
     //导航
     RTContainerNavigationController *nav = [[RTContainerNavigationController alloc] initWithRootViewController:vc];
-
+    nav.navigationBar.topItem.title = title;
+    
     return nav;
 }
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
     NSLog(@"点击了第几个 item %@",item);
+}
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+
+    return YES;
 }
 
 #pragma mark - <UITabBarControllerDelegate>
@@ -107,18 +181,39 @@
     }
 }
 
-//去掉tabBar顶部线条
-//- (void)removeTabarTopLine {
-//    CGRect rect = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
-//    UIGraphicsBeginImageContext(rect.size);
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    CGContextSetFillColorWithColor(context, [[UIColor clearColor] CGColor]);
-//    CGContextFillRect(context, rect);
-//    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-//    [self.tabBar setBackgroundImage:img];
-//    [self.tabBar setShadowImage:img];
-//}
+//ios 13以下 去掉tabBar顶部线条
+- (void)removeTabarTopLine {
+    CGRect rect = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [[UIColor clearColor] CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    [self.tabBar setBackgroundImage:img];
+    [self.tabBar setShadowImage:img];
+}
+
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    [super traitCollectionDidChange:previousTraitCollection];
+    /**
+     *CGColor适配
+     *iOS13后，UIColor能够表示动态颜色，但是CGColor依然只能表示一种颜色。所以对于CALayer对象只能在traitCollectionDidChange方法中进行改变
+    */
+
+    if (@available(iOS 13.0, *)) {
+         ///trait发生了改变
+        if ([self.traitCollection hasDifferentColorAppearanceComparedToTraitCollection:previousTraitCollection]) {
+            ///设置TabBar的背景颜色
+            UITabBarAppearance *appearance = [self.tabBar.standardAppearance copy];
+
+            UIImage *backgroundImage = [UIImage imageWithColor:kNavigationColor size:self.tabBar.frame.size];
+            appearance.backgroundImage =  backgroundImage;
+            self.tabBar.standardAppearance = appearance;
+        }
+        
+    }
+}
 
 
 - (void)didReceiveMemoryWarning {

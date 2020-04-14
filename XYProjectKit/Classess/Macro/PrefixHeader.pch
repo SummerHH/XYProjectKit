@@ -46,7 +46,7 @@
 #import "UIViewController+XYExit.h"
 #import "AppDelegate+XYAppService.h"
 #import "XYNavigationBar.h"
-
+#import "UIColor+Gradient.h"
 /*
  ************************************************************************************
  *单利类
@@ -66,6 +66,7 @@
 #import "UConstants.h"
 #import "UtilsMacro.h"
 #import "VendorMarco.h"
+#import "UIColorMacro.h"
 
 /*
  ************************************************************************************
@@ -76,6 +77,8 @@
 #import "JXPagerView.h"
 #import "XYJsonConversion.h"
 #import "XYFMDBManager.h"
+#import "XYWordItem.h"
+#import "XYWordArrowItem.h"
 
 #endif
 

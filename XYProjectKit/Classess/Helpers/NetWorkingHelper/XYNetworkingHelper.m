@@ -35,6 +35,7 @@ extern NSString * const AFNetworkingOperationFailingURLResponseDataErrorKey;
 #pragma mark - 初始化AFHTTPSessionManager相关属性
 + (void)initialize {
     
+    
     _sessionManager = [XYNetworkSessionManager manager];
     //设置请求的超时时间
     _sessionManager.requestSerializer.timeoutInterval = 30.f;
@@ -441,20 +442,6 @@ extern NSString * const AFNetworkingOperationFailingURLResponseDataErrorKey;
 }
 
 + (__kindof NSURLSessionTask *)dataTaskWithHTTPMethod:(XYNetworkingRequestMethod)method url:(NSString *)url parameters:(NSDictionary *)parameters callback:(void(^)(XYNetworkResponse *responseObject))callback {
-    
-    if (!_isNetWorking) {
-        /// 如果没有网络 则不发送请求
-        NSError *error = [NSError errorCode:NSCommonErrorCodeUnKnow
-                                   userInfo:@{
-                                              NSLocalizedFailureReasonErrorKey : @"无网络连接"
-                                              }];
-
-        XYNetworkResponse *responseObject = [XYNetworkResponse responseWithRawData:nil error:error];
-        
-        callback ? callback(responseObject) : nil;
-        
-        return nil;
-    }
     
     NSURLSessionTask *sessionTask = [_sessionManager requestWithMethod:[self getMethodStr:method] URLString:url parameters:parameters completion:^(NSURLSessionDataTask *task, XYNetworkResponse *responseObject) {
         

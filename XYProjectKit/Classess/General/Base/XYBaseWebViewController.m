@@ -76,8 +76,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
         }];
         
         [self.progressView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(kStatusBarHeight + (self.navigationController.navigationBar.height));
-            make.left.right.mas_equalTo(self.view);
+            make.top.left.right.mas_equalTo(self.view);
             make.height.mas_equalTo(3.0f);
         }];
     }
@@ -87,10 +86,14 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     [super viewWillAppear:animated];
     
     if (_isNavHidden == YES) {
-        self.navigationController.navigationBarHidden = YES;
+        self.navigationController.navigationBar.hidden = YES;
         //创建一个高20的假状态栏
         UIView *statusBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, kStatusBarHeight)];
-        statusBarView.backgroundColor = [UIColor whiteColor];
+        statusBarView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin |
+        UIViewAutoresizingFlexibleTopMargin |
+        UIViewAutoresizingFlexibleWidth |
+        UIViewAutoresizingFlexibleHeight;
+        statusBarView.backgroundColor = kNavigationColor;
         [self.view addSubview:statusBarView];
     }else{
         self.navigationItem.leftBarButtonItems = @[self.customBackBarItem];
@@ -486,7 +489,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 
 -(UIBarButtonItem*)customBackBarItem{
     if (!_customBackBarItem) {
-        _customBackBarItem = [UIBarButtonItem barButtonItemWithImage:IMAGENAMED(@"icon-nav-back_15x16_.png") highImage:nil target:self action:@selector(customBackItemClicked:) forControlEvents:UIControlEventTouchUpInside];
+        _customBackBarItem = [UIBarButtonItem barButtonItemWithImage:IMAGENAMED(@"bblink_ic_nav_back_22x22_.png") highImage:nil target:self action:@selector(customBackItemClicked:) forControlEvents:UIControlEventTouchUpInside];
     }
     
     return _customBackBarItem;
@@ -520,6 +523,5 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     self.wkWebView.navigationDelegate = nil;
     self.wkWebView.scrollView.delegate = nil;
 }
-
 
 @end

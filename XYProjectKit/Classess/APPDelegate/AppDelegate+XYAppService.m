@@ -27,7 +27,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    if (@available(iOS 8.0, *)) {
+     if (@available(iOS 8.0, *)) {
         [[UIButton appearance] setExclusiveTouch:YES];
     }
 
@@ -46,7 +46,7 @@
         XYBaseTabBarViewController *tabBarController = [[XYBaseTabBarViewController alloc] init];
         tabBarController.tabBar.translucent = NO;
         
-        self.window.rootViewController = [[XYBaseNavigationViewController alloc] initWithRootViewControllerNoWrapping:tabBarController];
+        self.window.rootViewController = [[RTRootNavigationController alloc] initWithRootViewControllerNoWrapping:tabBarController];
         
     }else {
         
@@ -78,29 +78,29 @@
                                                        @"XYShopViewController",
                                                        @"XYPersonalViewController"
                                                        ]];
-    /// 设置导航栏按钮颜色
-    [XYNavigationBar xy_setDefaultNavBarTintColor:[UIColor greenColor]];
-    /// 设置导航栏背景颜色
-//    [XYNavigationBar xy_setDefaultNavBarBarTintColor:[UIColor whiteColor]];
-    [XYNavigationBar xy_setDefaultNavBarBackgroundImage:[UIImage imageNamed:@"bm_up_navBg_375x64_.png"]];
-    /// 设置导航栏按钮的颜色
-    [XYNavigationBar xy_setDefaultNavBarTitleColor:[UIColor purpleColor]];
-    /// 隐藏导航栏下面的线
-    [XYNavigationBar xy_setDefaultNavBarShadowImageHidden:NO];
-    [XYNavigationBar xy_setDefaultStatusBarStyle:UIStatusBarStyleLightContent];
+    // 设置导航栏默认的背景颜色
+    [XYNavigationBar xy_setDefaultNavBarBarTintColor:kNavigationColor];
+    // 设置导航栏所有按钮的默认颜色
+    [XYNavigationBar xy_setDefaultNavBarTintColor:kNavigationTitleColor];
+    // 设置导航栏标题默认颜色
+    [XYNavigationBar xy_setDefaultNavBarTitleColor:kNavigationTitleColor];
+     // 如果需要设置导航栏底部分割线隐藏，可以在这里统一设置
+    [XYNavigationBar xy_setDefaultNavBarShadowImageHidden:YES];
 }
 
 #pragma mark ----- 初始化网络配置 ------
 
 - (void)NetWorkConfig {
     //开启日志
-#ifdef DEBUG
+//#ifdef DEBUG
     [XYNetworkingHelper openLog];
-#endif
+//#endif
     //设置请求超时时间
     [XYNetworkingHelper setRequestTimeoutInterval:30];
     //设置请求的路径
-    [XYNetworkingHelper setBaseURL:API_BASE_URL_STRING];
+//    [XYNetworkingHelper setBaseURL:API_BASE_URL_STRING];
+    
+    [XYConstantDataCenter sharedConstantData];
 }
 
 - (void)initUmengService {
@@ -133,7 +133,7 @@
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
--(UIViewController *)getCurrentVC {
+-(UIViewController *)getCurrentViewController {
     
     UIViewController *result = nil;
     
@@ -159,9 +159,9 @@
     return result;
 }
 
--(UIViewController *)getCurrentUIVC {
+-(UIViewController *)getCurrentRootViewController {
     
-    UIViewController  *superVC = [self getCurrentVC];
+    UIViewController  *superVC = [self getCurrentViewController];
     
     if ([superVC isKindOfClass:[UITabBarController class]]) {
         
@@ -179,7 +179,5 @@
         }
     return superVC;
 }
-
-
 
 @end

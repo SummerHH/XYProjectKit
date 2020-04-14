@@ -82,7 +82,7 @@
                         BOOL oldState = [UIView areAnimationsEnabled];
                         [UIView setAnimationsEnabled:NO];
                         
-                        window.rootViewController = [[XYBaseNavigationViewController alloc] initWithRootViewControllerNoWrapping:tabBarController];
+                        window.rootViewController = [[RTRootNavigationController alloc] initWithRootViewControllerNoWrapping:tabBarController];
                         [UIView setAnimationsEnabled:oldState];
                     } completion:nil];
 }

@@ -24,7 +24,6 @@ static inline BOOL isIPhoneNotchScreen() {
             iPhoneNotchDirectionSafeAreaInsets = safeAreaInsets.right;
         } else if ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortraitUpsideDown) {
             iPhoneNotchDirectionSafeAreaInsets = safeAreaInsets.bottom;
-
         } else {
             iPhoneNotchDirectionSafeAreaInsets = safeAreaInsets.top;
         }

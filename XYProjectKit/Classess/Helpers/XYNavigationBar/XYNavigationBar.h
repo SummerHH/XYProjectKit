@@ -13,20 +13,18 @@ NS_ASSUME_NONNULL_BEGIN
 @interface XYNavigationBar : UIView
 
 + (BOOL)isIphoneX;
-+ (CGFloat)navBarBottom;
-+ (CGFloat)tabBarHeight;
-+ (CGFloat)screenWidth;
-+ (CGFloat)screenHeight;
 
 @end
 
 @interface XYNavigationBar (XYDefault)
+/**  全局设置 !!! */
 
-/// 设置需要屏蔽的控制器
-/** warning: xy_setNavigationControllerBlacklist 在每个VC 都是单个独立的导航控制器中使用意义不大*/
+/** 设置需要屏蔽的控制器 warning: xy_setNavigationControllerBlacklist 在每个VC 都是单个独立的导航控制器中使用意义不大*/
 + (void)xy_setNavigationControllerBlacklist:(NSArray<NSString *> *)list;
-/// 如果使用RTRootNavigationController包装 tabBarController 需要设置包装的tabBar包装的视图
+
+/** 如果使用RTRootNavigationController包装 tabBarController */
 + (void)xy_setTabBarControllerWhiteList:(NSArray<NSString *> *)list;
+
 /** set default barTintColor of UINavigationBar */
 + (void)xy_setDefaultNavBarBarTintColor:(UIColor *)color;
 
@@ -97,6 +95,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)xy_setNavBarShadowImageHidden:(BOOL)hidden;
 - (BOOL)xy_navBarShadowImageHidden;
 
+/** 设置视图布局开始位置 */
+- (void)initializeSelfVCSetting;
+/** 视图从(0,0)点开始*/
+- (void)defualtAutomaticallyAdjustsView;
 
 @end
 

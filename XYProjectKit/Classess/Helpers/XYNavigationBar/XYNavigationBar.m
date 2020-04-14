@@ -16,21 +16,8 @@
 + (BOOL)isIphoneX {
     return isIPhoneNotchScreen();
 }
-+ (CGFloat)navBarBottom {
-    return kTopHeight;
-}
-+ (CGFloat)tabBarHeight {
-    return kTabBarHeight;
-}
-+ (CGFloat)screenWidth {
-    return [UIScreen mainScreen].bounds.size.width;
-}
-+ (CGFloat)screenHeight {
-    return [UIScreen mainScreen].bounds.size.height;
-}
 
 @end
-
 
 //=============================================================================
 #pragma mark - default navigationBar barTintColor、tintColor and statusBarStyle YOU CAN CHANGE!!!
@@ -53,6 +40,7 @@ static char kDefaultNavBarShadowImageHiddenKey;
     return (list != nil) ? list : nil;
 }
 
+/** 设置黑名单 */
 + (void)xy_setNavigationControllerBlacklist:(NSArray<NSString *> *)list {
     NSAssert(list, @"list 不能设置为nil");
     objc_setAssociatedObject(self, &kBlacklistKey, list, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -65,6 +53,7 @@ static char kDefaultNavBarShadowImageHiddenKey;
     return (list != nil) ? list : nil;
 }
 
+/** 设置 tabBarController的白名单*/
 + (void)xy_setTabBarControllerWhiteList:(NSArray<NSString *> *)list {
     NSAssert(list, @"tabBarlist 不能设置为nil");
     objc_setAssociatedObject(self, &kTabBarWhitelistKey, list, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -72,91 +61,77 @@ static char kDefaultNavBarShadowImageHiddenKey;
 
 + (BOOL)needUpdateNavigationBar:(UIViewController *)vc {
     NSString *vcStr = NSStringFromClass(vc.class);
-    return ![[self blacklist] containsObject:vcStr];// 当黑名单里 没有 表示需要更新
+    return ![[self blacklist] containsObject:vcStr];/// 黑名单
 }
 
-/// 设置默认导航栏背景颜色
+/** 设置默认导航栏背景颜色 */
 + (UIColor *)defaultNavBarBarTintColor {
     UIColor *color = (UIColor *)objc_getAssociatedObject(self, &kDefaultNavBarBarTintColorKey);
     return (color != nil) ? color : [UIColor whiteColor];
 }
 
+/** 设置自定义导航栏背景颜色 */
 + (void)xy_setDefaultNavBarBarTintColor:(UIColor *)color {
     objc_setAssociatedObject(self, &kDefaultNavBarBarTintColorKey, color, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+/** 设置默认导航栏背景图片 */
 + (UIImage *)defaultNavBarBackgroundImage {
     UIImage *image = (UIImage *)objc_getAssociatedObject(self, &kDefaultNavBarBackgroundImageKey);
     return image;
 }
 
+/** 设置自定义导航栏背景图片 */
 + (void)xy_setDefaultNavBarBackgroundImage:(UIImage *)image {
     objc_setAssociatedObject(self, &kDefaultNavBarBackgroundImageKey, image, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-/// 默认导航栏按钮颜色
+/** 设置默认导航栏按钮颜色 */
 + (UIColor *)defaultNavBarTintColor {
     UIColor *color = (UIColor *)objc_getAssociatedObject(self, &kDefaultNavBarTintColorKey);
-    return (color != nil) ? color : [UIColor colorWithRed:0 green:0.478431 blue:1 alpha:1.0];
+    return (color != nil) ? color : [UIColor blackColor];
 }
 
+/** 设置自定义导航栏按钮颜色 */
 + (void)xy_setDefaultNavBarTintColor:(UIColor *)color {
     objc_setAssociatedObject(self, &kDefaultNavBarTintColorKey, color, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-/// 默认导航栏标题颜色
+/** 设置默认导航栏标题颜色 */
 + (UIColor *)defaultNavBarTitleColor {
     UIColor *color = (UIColor *)objc_getAssociatedObject(self, &kDefaultNavBarTitleColorKey);
     return (color != nil) ? color : [UIColor blackColor];
 }
+
+/** 设置自定义导航栏标题颜色 */
 + (void)xy_setDefaultNavBarTitleColor:(UIColor *)color {
     objc_setAssociatedObject(self, &kDefaultNavBarTitleColorKey, color, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+/** 设置默认状态栏样式 */
 + (UIStatusBarStyle)defaultStatusBarStyle {
     id style = objc_getAssociatedObject(self, &kDefaultStatusBarStyleKey);
     return (style != nil) ? [style integerValue] : UIStatusBarStyleDefault;
 }
 
+/** 设置自定义导航栏样式 */
 + (void)xy_setDefaultStatusBarStyle:(UIStatusBarStyle)style {
     objc_setAssociatedObject(self, &kDefaultStatusBarStyleKey, @(style), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+/** 设置默认不隐藏导航栏黑色分割线 */
 + (BOOL)defaultNavBarShadowImageHidden {
     id hidden = objc_getAssociatedObject(self, &kDefaultNavBarShadowImageHiddenKey);
     return (hidden != nil) ? [hidden boolValue] : NO;
 }
 
+/** 设置导航栏黑色分割线是否隐藏 */
 + (void)xy_setDefaultNavBarShadowImageHidden:(BOOL)hidden {
     objc_setAssociatedObject(self, &kDefaultNavBarShadowImageHiddenKey, @(hidden), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 + (CGFloat)defaultNavBarBackgroundAlpha {
     return 1.0;
-}
-
-+ (UIColor *)middleColor:(UIColor *)fromColor toColor:(UIColor *)toColor percent:(CGFloat)percent {
-    CGFloat fromRed = 0;
-    CGFloat fromGreen = 0;
-    CGFloat fromBlue = 0;
-    CGFloat fromAlpha = 0;
-    [fromColor getRed:&fromRed green:&fromGreen blue:&fromBlue alpha:&fromAlpha];
-    
-    CGFloat toRed = 0;
-    CGFloat toGreen = 0;
-    CGFloat toBlue = 0;
-    CGFloat toAlpha = 0;
-    [toColor getRed:&toRed green:&toGreen blue:&toBlue alpha:&toAlpha];
-    
-    CGFloat newRed = fromRed + (toRed - fromRed) * percent;
-    CGFloat newGreen = fromGreen + (toGreen - fromGreen) * percent;
-    CGFloat newBlue = fromBlue + (toBlue - fromBlue) * percent;
-    CGFloat newAlpha = fromAlpha + (toAlpha - fromAlpha) * percent;
-    return [UIColor colorWithRed:newRed green:newGreen blue:newBlue alpha:newAlpha];
-}
-
-+ (CGFloat)middleAlpha:(CGFloat)fromAlpha toAlpha:(CGFloat)toAlpha percent:(CGFloat)percent {
-    return fromAlpha + (toAlpha - fromAlpha) * percent;
 }
 
 @end
@@ -177,13 +152,7 @@ static char kBackgroundImageKey;
 }
 
 - (void)setBackgroundView:(UIView *)backgroundView {
-    if (backgroundView) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(xy_keyboardDidShow) name:UIKeyboardDidShowNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(xy_keyboardWillHide) name:UIKeyboardWillHideNotification object:nil];
-    } else {
-        [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
-        [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
-    }
+
     objc_setAssociatedObject(self, &kBackgroundViewKey, backgroundView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
@@ -207,16 +176,20 @@ static char kBackgroundImageKey;
 - (void)xy_setBackgroundImage:(UIImage *)image {
     [self.backgroundView removeFromSuperview];
     self.backgroundView = nil;
-    if (self.backgroundImageView == nil) {
+    if (!self.backgroundImageView) {
         // add a image(nil color) to _UIBarBackground make it clear
         [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+        self.backgroundImageView = [[UIImageView alloc] initWithFrame:self.subviews.firstObject.bounds];
+        self.backgroundImageView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin |
+        UIViewAutoresizingFlexibleTopMargin |
+        UIViewAutoresizingFlexibleWidth |
+        UIViewAutoresizingFlexibleHeight;  // ****
+        // _UIBarBackground is first subView for navigationBar
+        /** iOS11下导航栏不显示问题 */
         if (self.subviews.count > 0) {
-            CGFloat statusBarHeight  = [[UIApplication sharedApplication] statusBarFrame].size.height;
-            CGFloat navBarBottom = statusBarHeight + self.frame.size.height;
-            self.backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.bounds), navBarBottom)];
-            self.backgroundImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-            // _UIBarBackground is first subView for navigationBar
             [self.subviews.firstObject insertSubview:self.backgroundImageView atIndex:0];
+        } else {
+            [self insertSubview:self.backgroundImageView atIndex:0];
         }
     }
     self.backgroundImage = image;
@@ -228,45 +201,31 @@ static char kBackgroundImageKey;
     [self.backgroundImageView removeFromSuperview];
     self.backgroundImageView = nil;
     self.backgroundImage = nil;
-    if (self.backgroundView == nil) {
+    if (!self.backgroundView) {
         // add a image(nil color) to _UIBarBackground make it clear
         [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-        CGFloat statusBarHeight  = [[UIApplication sharedApplication] statusBarFrame].size.height;
-        CGFloat navBarBottom = statusBarHeight + self.frame.size.height;
-        self.backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.bounds), navBarBottom)];
-        self.backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        self.backgroundView = [[UIView alloc] initWithFrame:self.subviews.firstObject.bounds];
+        self.backgroundView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin |
+        UIViewAutoresizingFlexibleTopMargin |
+        UIViewAutoresizingFlexibleWidth |
+        UIViewAutoresizingFlexibleHeight;  // ****
+        
         // _UIBarBackground is first subView for navigationBar
-        [self.subviews.firstObject insertSubview:self.backgroundView atIndex:0];
-    }
-    self.backgroundView.backgroundColor = color;
-}
-
-- (void)xy_keyboardDidShow {
-    [self xy_restoreUIBarBackgroundFrame];
-}
-
-- (void)xy_keyboardWillHide {
-    [self xy_restoreUIBarBackgroundFrame];
-}
-
-- (void)xy_restoreUIBarBackgroundFrame {
-    // IQKeyboardManager change _UIBarBackground frame sometimes, so I need restore it
-    for (UIView *view in self.subviews) {
-        Class _UIBarBackgroundClass = NSClassFromString(@"_UIBarBackground");
-        if (_UIBarBackgroundClass != nil) {
-            if ([view isKindOfClass:_UIBarBackgroundClass]) {
-                CGFloat statusBarHeight  = [[UIApplication sharedApplication] statusBarFrame].size.height;
-                CGFloat navBarBottom = statusBarHeight + self.frame.size.height;
-                view.frame = CGRectMake(0, self.frame.size.height-navBarBottom, [XYNavigationBar screenWidth], navBarBottom);
-            }
+        /** iOS11下导航栏不显示问题 */
+        if (self.subviews.count > 0) {
+            [self.subviews.firstObject insertSubview:self.backgroundView atIndex:0];
+        } else {
+            [self insertSubview:self.backgroundView atIndex:0];
         }
     }
+    self.backgroundView.backgroundColor = color;
 }
 
 // set _UIBarBackground alpha (_UIBarBackground subviews alpha <= _UIBarBackground alpha)
 - (void)xy_setBackgroundAlpha:(CGFloat)alpha {
     UIView *barBackgroundView = self.subviews.firstObject;
-    if (@available(iOS 11.0, *)) {   // sometimes we can't change _UIBarBackground alpha
+    if (@available(iOS 11.0, *)) {
+        // sometimes we can't change _UIBarBackground alpha
         for (UIView *view in barBackgroundView.subviews) {
             view.alpha = alpha;
         }
@@ -280,14 +239,14 @@ static char kBackgroundImageKey;
         if (hasSystemBackIndicator == YES) {   // _UIBarBackground/_UINavigationBarBackground对应的view是系统导航栏，不需要改变其透明度
             Class _UIBarBackgroundClass = NSClassFromString(@"_UIBarBackground");
             if (_UIBarBackgroundClass != nil) {
-                if ([view isKindOfClass:_UIBarBackgroundClass] == NO) {
+                if (![view isKindOfClass:_UIBarBackgroundClass]) {
                     view.alpha = alpha;
                 }
             }
             
             Class _UINavigationBarBackground = NSClassFromString(@"_UINavigationBarBackground");
             if (_UINavigationBarBackground != nil) {
-                if ([view isKindOfClass:_UINavigationBarBackground] == NO) {
+                if (![view isKindOfClass:_UINavigationBarBackground]) {
                     view.alpha = alpha;
                 }
             }
@@ -296,14 +255,14 @@ static char kBackgroundImageKey;
             if ([view isKindOfClass:NSClassFromString(@"_UINavigationBarBackIndicatorView")] == NO) {
                 Class _UIBarBackgroundClass = NSClassFromString(@"_UIBarBackground");
                 if (_UIBarBackgroundClass != nil) {
-                    if ([view isKindOfClass:_UIBarBackgroundClass] == NO) {
+                    if (![view isKindOfClass:_UIBarBackgroundClass]) {
                         view.alpha = alpha;
                     }
                 }
                 
                 Class _UINavigationBarBackground = NSClassFromString(@"_UINavigationBarBackground");
                 if (_UINavigationBarBackground != nil) {
-                    if ([view isKindOfClass:_UINavigationBarBackground] == NO) {
+                    if (![view isKindOfClass:_UINavigationBarBackground]) {
                         view.alpha = alpha;
                     }
                 }
@@ -376,6 +335,7 @@ static char kBackgroundImageKey;
 //==========================================================================
 @implementation UINavigationController (XYAddition)
 
+
 - (void)setNeedsNavigationBarUpdateForBarBackgroundImage:(UIImage *)backgroundImage {
     [self.navigationBar xy_setBackgroundImage:backgroundImage];
 }
@@ -420,18 +380,18 @@ static char kBackgroundImageKey;
 
 @implementation UIViewController (XYAddition)
 
-static char kPushToCurrentVCFinishedKey;
-static char kPushToNextVCFinishedKey;
-static char kNavBarBackgroundImageKey;
-static char kNavBarBarTintColorKey;
-static char kNavBarBackgroundAlphaKey;
-static char kNavBarTintColorKey;
-static char kNavBarTitleColorKey;
-static char kStatusBarStyleKey;
-static char kNavBarShadowImageHiddenKey;
-static char kSystemNavBarBarTintColorKey;
-static char kSystemNavBarTintColorKey;
-static char kSystemNavBarTitleColorKey;
+static char kPushToCurrentVCFinishedKey;            /// 跳转到当前是否完成
+static char kPushToNextVCFinishedKey;               /// 跳转到下一个VC是否完成
+static char kNavBarBackgroundImageKey;              /// 当前导航栏背景图片
+static char kNavBarBarTintColorKey;                 /// 当前导航栏背景颜色
+static char kNavBarBackgroundAlphaKey;              /// 当前导航栏透明度
+static char kNavBarTintColorKey;                    /// 当前导航栏按钮颜色
+static char kNavBarTitleColorKey;                   /// 当前导航栏标题颜色
+static char kStatusBarStyleKey;                     /// 当前状态栏样式
+static char kNavBarShadowImageHiddenKey;            /// 当前导航栏底部的黑线是否隐藏
+static char kSystemNavBarBarTintColorKey;           /// 系统导航栏按钮的颜色
+static char kSystemNavBarTintColorKey;              /// 系统导航栏按钮的颜色
+static char kSystemNavBarTitleColorKey;             /// 系统导航栏标题的颜色
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     UIStatusBarStyle barStyle = [self xy_statusBarStyle];
@@ -627,35 +587,28 @@ static char kSystemNavBarTitleColorKey;
 - (void)xy_viewWillAppear:(BOOL)animated {
     
     if ([self canUpdateNavigationBar]) {
-        NSLog(@"黑名单中有执行: %@",NSStringFromClass([self class]));
-
-        if (![XYNavigationBar needUpdateNavigationBar:self]) {
+        if (![XYNavigationBar needUpdateNavigationBar:self]) { // 黑名单中有设置系统导航的颜色
             if ([self xy_systemNavBarBarTintColor] == nil) {
                 [self xy_setSystemNavBarBarTintColor:[self xy_navBarBarTintColor]];
             }
             if ([self xy_systemNavBarTintColor] == nil) {
                 [self xy_setSystemNavBarTintColor:[self xy_navBarTintColor]];
             }
+                      
             if ([self xy_systemNavBarTitleColor] == nil) {
                 [self xy_setSystemNavBarTitleColor:[self xy_navBarTitleColor]];
             }
-            
-            /// 设置了黑名单会忽略 导航栏背景图片的设置,使用颜色代替背景图片
-            /// 黑名单中设置的导航颜色先查找 xy_setSystemNavBarBarTintColor --> defaultNavBarBarTintColor 如果都没有设置是 [UIColor whiteColor] 如果黑名单中不设置默认导航颜色,隐藏导航的下划线则失效,想改变当前 VC 的颜色可以在 xy_setSystemNavBarBarTintColor 设置
-            [self.navigationController setNeedsNavigationBarUpdateForBarTintColor:[self xy_navBarBarTintColor]];
-            
-        } else {
-            /// 设置导航栏背景颜色
-            UIImage *barBgImage = [self xy_navBarBackgroundImage];
-            if (barBgImage != nil) {
-                [self.navigationController setNeedsNavigationBarUpdateForBarBackgroundImage:barBgImage];
-            } else {
-                [self.navigationController setNeedsNavigationBarUpdateForBarTintColor:[self xy_navBarBarTintColor]];
-            }
+                     
+            [self.navigationController setNeedsNavigationBarUpdateForTintColor:[self xy_navBarTintColor]];
         }
-
-        [self setPushToNextVCFinished:NO];
-
+        
+        /// 设置导航栏背景颜色
+        UIImage *barBgImage = [self xy_navBarBackgroundImage];
+        if (barBgImage != nil) {
+            [self.navigationController setNeedsNavigationBarUpdateForBarBackgroundImage:barBgImage];
+        } else {
+            [self.navigationController setNeedsNavigationBarUpdateForBarTintColor:[self xy_navBarBarTintColor]];
+        }
         /// 设置导航透明度
         [self.navigationController setNeedsNavigationBarUpdateForBarBackgroundAlpha:[self xy_navBarBackgroundAlpha]];
         /// 设置导航栏按钮颜色
@@ -665,8 +618,11 @@ static char kSystemNavBarTitleColorKey;
         /// 隐藏导航栏下面的线
         [self.navigationController setNeedsNavigationBarUpdateForShadowImageHidden:[self xy_navBarShadowImageHidden]];
         
+        [self setPushToNextVCFinished:NO];
+        
+        [self initializeSelfVCSetting];
     }
-
+    
     [self xy_viewWillAppear:animated];
 }
 
@@ -690,6 +646,7 @@ static char kSystemNavBarTitleColorKey;
         [self xy_setSystemNavBarTintColor:nil];
         [self xy_setSystemNavBarTitleColor:nil];
     }
+
     [self xy_viewDidDisappear:animated];
 }
 
@@ -697,8 +654,9 @@ static char kSystemNavBarTitleColorKey;
 - (UIBarButtonItem *)rt_customBackItemWithTarget:(id)target action:(SEL)action {
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setImage:[UIImage imageNamed:@"icon-nav-back_15x16_.png"] forState:UIControlStateNormal];
-    [button sizeToFit];
+    [button setImage:[UIImage imageNamed:@"NavgationBar_black.png"] forState:UIControlStateNormal];
+    button.frame = CGRectMake(0, 0, 44, 44);
+    button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;//居左显示
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     return [[UIBarButtonItem alloc] initWithCustomView:button];
 }
@@ -718,6 +676,46 @@ static char kSystemNavBarTitleColorKey;
         UITabBarController *tabBarController = (UITabBarController *)rootViewController;
         return [tabBarController.viewControllers containsObject:self];
     }
+}
+
+/// 默认View 坐标从导航栏下面开始计算
+- (void)initializeSelfVCSetting {
+    
+    if (@available(iOS 11.0, *)) {
+        //ios 11 以上废除了下面的 api
+        [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+    }else {
+        if ([self respondsToSelector:@selector(setAutomaticallyAdjustsScrollViewInsets:)]) {
+            //原点从（0，64）开始
+            [self setAutomaticallyAdjustsScrollViewInsets:NO];
+        }
+    }
+    /// self.automaticallyAdjustsScrollViewInsets = NO 和 self.edgesForExtendedLayout = UIRectEdgeNone 联合使用 原点从（0，64）开始
+
+    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
+    self.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    //当设置NO的时候，原点坐标在（0，64）点
+    self.navigationController.navigationBar.translucent = NO;
+}
+
+/// 视图从 (0,0)点开始布局
+- (void)defualtAutomaticallyAdjustsView {
+    if (@available(iOS 11.0, *)) {
+        //ios 11 以上废除了下面的 api
+        [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+    }else {
+        if ([self respondsToSelector:@selector(setAutomaticallyAdjustsScrollViewInsets:)]) {
+            [self setAutomaticallyAdjustsScrollViewInsets:NO];
+        }
+    }
+    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
+        self.edgesForExtendedLayout = UIRectEdgeAll;
+    }
+    self.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    //原点在（0，0）点
+    self.navigationController.navigationBar.translucent = YES;
 }
 
 @end

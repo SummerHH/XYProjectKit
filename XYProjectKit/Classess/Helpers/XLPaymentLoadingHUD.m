@@ -68,7 +68,6 @@ static CGFloat lineWidth = 4.0f;
     _animationLayer.lineCap = kCALineCapRound;
     [self.layer addSublayer:_animationLayer];
 
-    
     _link = [CADisplayLink displayLinkWithTarget:self selector:@selector(displayLinkAction)];
     [_link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
     _link.paused = true;
@@ -95,7 +94,6 @@ static CGFloat lineWidth = 4.0f;
     CGFloat centerY = _animationLayer.bounds.size.height/2.0f;
     UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(centerX, centerY) radius:radius startAngle:_startAngle endAngle:_endAngle clockwise:true];
     path.lineCapStyle = kCGLineCapRound;
-    
     _animationLayer.path = path.CGPath;
 }
 
