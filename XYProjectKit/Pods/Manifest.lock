@@ -38,6 +38,7 @@ PODS:
     - PLPlayerKit/iphoneos (= 3.4.3)
   - PLPlayerKit/iphoneos (3.4.3)
   - Reachability (3.2)
+  - ReactiveObjC (3.1.1)
   - RTRootNavigationController (0.7.1):
     - RTRootNavigationController/Core (= 0.7.1)
   - RTRootNavigationController/Core (0.7.1)
@@ -88,6 +89,7 @@ DEPENDENCIES:
   - PLMediaStreamingKit
   - PLPlayerKit
   - Reachability (~> 3.2)
+  - ReactiveObjC
   - RTRootNavigationController
   - SDCycleScrollView
   - SDWebImage
@@ -103,9 +105,10 @@ DEPENDENCIES:
   - YYCache
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - AFNetworking
     - AlipaySDK-iOS
+    - Aspects
     - AvoidCrash
     - Bugly
     - FLAnimatedImage
@@ -119,7 +122,10 @@ SPEC REPOS:
     - MJExtension
     - MJRefresh
     - NullSafe
+    - PLMediaStreamingKit
+    - PLPlayerKit
     - Reachability
+    - ReactiveObjC
     - RTRootNavigationController
     - SDCycleScrollView
     - SDWebImage
@@ -130,10 +136,6 @@ SPEC REPOS:
     - UMCShare
     - XHLaunchAd
     - YYCache
-  trunk:
-    - Aspects
-    - PLMediaStreamingKit
-    - PLPlayerKit
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -155,6 +157,7 @@ SPEC CHECKSUMS:
   PLMediaStreamingKit: f457a9a15bf1c31eccb894f0fe7e18fd301b055e
   PLPlayerKit: a44734dc78c1f8f9fb22c537fa1916612fa46b06
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   RTRootNavigationController: afa6913402be26f8326f7f37fc1550aa67baddcc
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
@@ -166,6 +169,6 @@ SPEC CHECKSUMS:
   XHLaunchAd: 45048592af01aa501c9d2d0c45e95ca74c4d0596
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: 8022f36b77e02bfb1d866feb2cef4665170c8f3b
+PODFILE CHECKSUM: f0a94bc14fe45d448890272a5dcbcda6b08a5be1
 
-COCOAPODS: 1.8.0.beta.2
+COCOAPODS: 1.10.0

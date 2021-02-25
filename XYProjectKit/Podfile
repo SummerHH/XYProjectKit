@@ -48,4 +48,6 @@ pod 'PLMediaStreamingKit'
 # 七牛播放 SDK
 pod 'PLPlayerKit'
 
+pod 'ReactiveObjC'
+
 end
